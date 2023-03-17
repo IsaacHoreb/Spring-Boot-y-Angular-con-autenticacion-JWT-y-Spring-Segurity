@@ -8,7 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //23.-Importamos el button (ANGULAR MATERIA)
 import { MatButtonModule } from '@angular/material/button';
 //32.-Importamos es de From fields de Angular Material
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
+//32.1 Importamoe el Input de Angular Material
+import { MatInputModule } from '@angular/material/input';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -29,7 +31,8 @@ import { LoginComponent } from './pages/login/login.component';
     BrowserAnimationsModule,
     MatButtonModule, //23.1-Importamo el componente
     //23.2-INSTALLAMOS BOOTRAP EN CMD --> npm install bootstrap-grid-only-css --save
-    MatFormFieldModule //32.1 Agregamos el componente
+    MatFormFieldModule, //32.2 Agregamos el componente
+    MatInputModule //32.3 Agregamos el componente
   ],
   providers: [],
   bootstrap: [AppComponent]
