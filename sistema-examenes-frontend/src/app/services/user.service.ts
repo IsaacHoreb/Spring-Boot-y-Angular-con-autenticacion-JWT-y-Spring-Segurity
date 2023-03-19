@@ -13,7 +13,9 @@ export class UserService {
 
   //40.- Creamos metodo
   public anadirUsuario(user: any) {
-    return this.httpClient.post(`${baserUrl}/usuarios`, user);
+    return this.httpClient.post(`${baserUrl}/usuarios/`, user);
   }
+
+  //41.- Nos vamos a signup.component.ts
 
 }
