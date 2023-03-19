@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'; //42.1-Esto se import
 import { UserService } from 'src/app/services/user.service';
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,12 +12,12 @@ export class SignupComponent implements OnInit {
 
   //42.1-Agrego metodo
   public user = {
-    username: '',
-    password: '',
-    nombre: '',
-    apellido: '',
-    email: '',
-    telefono: ''
+    username : '',
+    password : '',
+    nombre : '',
+    apellido : '',
+    email : '',
+    telefono : ''
   }
 
   ngOnInit(): void {
