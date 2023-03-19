@@ -13,17 +13,18 @@
                 buscamos sus componente en la pag. de Angular Material,
                 buscamos el Form field, y lo agregamos a importar a 
                 app.modules.ts-->
-                <form action="">
+                <form (ngSubmit) = "formSubmit()">
                     <mat-form-field class="full-width" appearance="outline">
                         <!--33.Continuamos agregando etiquetas-->
                         <mat-label>Nombre de usuario</mat-label>
                         <input matInput placeholder="Digite su nombre de usuario">
+                        <mat-hint>El nombre de usuario debe ser único</mat-hint>
                     </mat-form-field>
 
                     <mat-form-field class="full-width" appearance="outline">
                         <!--33.1-Continuamos agregando etiquetas-->
                         <mat-label>Contraseña de usuario</mat-label>
-                        <input type="password" matInput placeholder="Digite su contraseña">
+                        <input name="password" type="password" matInput placeholder="Digite su contraseña">
                     </mat-form-field>
 
                     <mat-form-field class="full-width" appearance="outline">

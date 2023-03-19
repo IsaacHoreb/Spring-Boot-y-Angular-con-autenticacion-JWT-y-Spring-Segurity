@@ -15,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { LoginComponent } from './pages/login/login.component';
     MatButtonModule, //23.1-Importamo el componente
     //23.2-INSTALLAMOS BOOTRAP EN CMD --> npm install bootstrap-grid-only-css --save
     MatFormFieldModule, //32.2 Agregamos el componente
-    MatInputModule //32.3 Agregamos el componente
+    MatInputModule, //32.3 Agregamos el componente
+    FormsModule, //44.3.1 - Agregamos
+    HttpClientModule //44.3 Para funcionar la pagina, debido al error de cargar
   ],
   providers: [],
   bootstrap: [AppComponent]

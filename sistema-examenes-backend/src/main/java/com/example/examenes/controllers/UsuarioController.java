@@ -23,7 +23,8 @@ public class UsuarioController {
     @PostMapping("/")
     public Usuario guardarUsuario(@RequestBody Usuario usuario) throws Exception {
         usuario.setPerfil("default.png"); //44.1 - Agremamos una img por defecto y nos vamos al Frontend
-                                          // en signup.componet.html o formulario mejor conocido 
+                                          // en signup.componet.html o formulario mejor conocido
+                                          //44.2 - >> RECORDAR : DEBEMOS AGREGAR EL HttpClientModule  A app.modules.ts para que cargue la pagina
         Set<UsuarioRol> roles = new HashSet<>();
 
         //CREAMOS PARA LOS ROLES
