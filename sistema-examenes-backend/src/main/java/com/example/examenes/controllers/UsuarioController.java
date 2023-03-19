@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 //19.-Creamos el controlador
-@RestController
+@RestController //Esto es para API REST Y CONECTAR CON EL HttpClient en el Front-end
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
