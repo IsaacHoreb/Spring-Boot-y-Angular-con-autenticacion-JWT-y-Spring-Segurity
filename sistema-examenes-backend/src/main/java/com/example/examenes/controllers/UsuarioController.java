@@ -13,6 +13,7 @@ import java.util.Set;
 //19.-Creamos el controlador
 @RestController //Esto es para API REST Y CONECTAR CON EL HttpClient en el Front-end
 @RequestMapping("/usuarios")
+@CrossOrigin("*") //44.-Con el '*' Permito cualquier peticion(GET,POST,PUST,DELETE,ETC) vamos al 44.1 <--
 public class UsuarioController {
 
     @Autowired
@@ -20,7 +21,9 @@ public class UsuarioController {
 
     //19.1-METODOS POST
     @PostMapping("/")
-    public Usuario guardarUsuario(@RequestBody Usuario usuario) throws Exception{
+    public Usuario guardarUsuario(@RequestBody Usuario usuario) throws Exception {
+        usuario.setPerfil("default.png"); //44.1 - Agremamos una img por defecto y nos vamos al Frontend
+                                          // en signup.componet.html o formulario mejor conocido 
         Set<UsuarioRol> roles = new HashSet<>();
 
         //CREAMOS PARA LOS ROLES

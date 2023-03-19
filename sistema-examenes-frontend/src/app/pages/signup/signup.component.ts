@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 //42.- AGREGANDO la implementacion OnInit
 export class SignupComponent implements OnInit {
 
-  //Agrego metodo
+  //42.1-Agrego metodo
   public user = {
     username: '',
     password: '',
@@ -20,14 +20,14 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
 
-  //Importante agregar constructor
+  //42.2-Importante agregar constructor
   //y lo de UserService
   constructor(private userService: UserService) { }
 
-  //Agregando condicional
+  //42.3-Agregando condicional
   formSubmit() {
     console.log(this.user);
     if (this.user.username == '' || this.user.username == null) {
@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
       return;
     }
 
-    //Agregado
+    //42.4-Agregado
     this.userService.anadirUsuario(this.user).subscribe(
       (data) => {
         console.log(data);
@@ -48,5 +48,9 @@ export class SignupComponent implements OnInit {
     )
 
   }
+
+  //43.-Nos vamos al Bank-end en UsuarioController, para agregar
+  //el CROS y permitir hacer el intercambio de informacion
+
 
 }
