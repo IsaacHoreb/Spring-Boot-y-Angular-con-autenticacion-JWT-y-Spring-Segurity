@@ -25,7 +25,7 @@ public class UsuarioController {
         usuario.setPerfil("default.png"); //44.1 - Agremamos una img por defecto y nos vamos al Frontend
                                           // en signup.componet.html o formulario mejor conocido
                                           //44.2 - >> RECORDAR : DEBEMOS AGREGAR EL HttpClientModule  A app.modules.ts para que cargue la pagina
-        Set<UsuarioRol> roles = new HashSet<>();
+        Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
         //CREAMOS PARA LOS ROLES
         Rol rol = new Rol();
@@ -37,7 +37,8 @@ public class UsuarioController {
         usuarioRol.setUsuario(usuario);
         usuarioRol.setRol(rol);
 
-        return usuarioService.guardarUsuario(usuario,roles);
+        usuarioRoles.add(usuarioRol); //Añadir para los roles en la tablas
+        return usuarioService.guardarUsuario(usuario,usuarioRoles);
     }
 
     //19.2-METODO GET
