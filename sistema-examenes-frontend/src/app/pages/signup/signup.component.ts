@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'; //42.1-Esto se import
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2'; //50.1- Importado
 
 
 @Component({
@@ -48,7 +49,9 @@ export class SignupComponent implements OnInit {
     this.userService.anadirUsuario(this.user).subscribe(
       (data) => {
         console.log(data);
-        alert('¡Usuario guardado con exito!')
+        //49.1. [Quitamos]-> alert('¡Usuario guardado con exito!')
+        //50.- Agremago e importamos el Swal. Nos vamos al signup.component.html
+        Swal.fire('Usuario guardado', 'Usuario registrado con exito en la Base de datos', 'success')
       }, (error) => {
         console.log(error);
         //47.1-[Quitamos]->alert('Ha ocurrido un error en el sistema');
@@ -56,7 +59,9 @@ export class SignupComponent implements OnInit {
         this.snack.open("¡¡Ha ocurrido un error en el sistema!!", "Aceptar", {
           duration: 3000
         });
-        
+
+        //49.- Ir a CMD y poner el comando npm install sweetalert2 para la ventana
+
       }
 
     )
