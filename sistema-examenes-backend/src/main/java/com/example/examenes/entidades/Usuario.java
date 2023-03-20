@@ -2,6 +2,8 @@ package com.example.examenes.entidades;
 //1.-Creamos las tablas
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -9,7 +11,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "usuarios")
-public class Usuario {
+public class Usuario implements UserDetails { //66.implementamos UserDetails y midicamos abajo
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Para decir que sea autoincrementable
@@ -44,9 +46,40 @@ public class Usuario {
         return username;
     }
 
+    @java.lang.Override //66.1 Para cuenta activa por cierto tiempo... true <--
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @java.lang.Override
+    public boolean isAccountNonLocked() {
+        return true; //66.2... true <--
+    }
+
+    @java.lang.Override
+    public boolean isCredentialsNonExpired() {
+        return true; //66.3...true <--
+    }
+
+    @java.lang.Override
+    public boolean isEnabled() {
+        return false;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
+
+    //67.-DEBEMOS CREAR LA CLASE Authority <-----####
+    //68.1-Agregamos_todo lo necesario
+    @java.lang.Override
+    public java.util.Collection<? extends GrantedAuthority> getAuthorities() {
+        Set<Authority> autoridades = new HashSet<>();
+        this.usuarioRoles.forEach(usuarioRol -> {
+            autoridades.add(new Authority(usuarioRol.getRol().getNombre()));
+        });
+        return autoridades;
+    } //69.-Creamos otra clase con JWTRequest
 
     public String getPassword() {
         return password;
