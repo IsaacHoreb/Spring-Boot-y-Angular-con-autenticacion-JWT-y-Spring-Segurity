@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 //32.1 Importamoe el Input de Angular Material
 import { MatInputModule } from '@angular/material/input';
+//45.- Importamos para una ventana bonita
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -34,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule, //32.2 Agregamos el componente
     MatInputModule, //32.3 Agregamos el componente
     FormsModule, //44.3.1 - Agregamos
-    HttpClientModule //44.3 Para funcionar la pagina, debido al error de cargar
+    HttpClientModule, //44.3 Para funcionar la pagina, debido al error de cargar
+    MatSnackBarModule //45.1 - Agremagos el importe
   ],
   providers: [],
   bootstrap: [AppComponent]
