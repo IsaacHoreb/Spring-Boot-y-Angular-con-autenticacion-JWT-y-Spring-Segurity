@@ -13,19 +13,23 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 //45.- Importamos para una ventana bonita
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+//54.- Importamos es del Angular Material
+import { MatCardModule } from '@angular/material/card';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule, //32.3 Agregamos el componente
     FormsModule, //44.3.1 - Agregamos
     HttpClientModule, //44.3 Para funcionar la pagina, debido al error de cargar
-    MatSnackBarModule //45.1 - Agremagos el importe
+    MatSnackBarModule, //45.1 - Agremagos el importe
+    MatCardModule //54.1- Agregamos
   ],
   providers: [],
   bootstrap: [AppComponent]

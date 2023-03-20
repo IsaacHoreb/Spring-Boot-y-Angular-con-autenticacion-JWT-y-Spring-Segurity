@@ -52,6 +52,8 @@ export class SignupComponent implements OnInit {
         //49.1. [Quitamos]-> alert('¡Usuario guardado con exito!')
         //50.- Agremago e importamos el Swal. Nos vamos al signup.component.html
         Swal.fire('Usuario guardado', 'Usuario registrado con exito en la Base de datos', 'success')
+        //51.- Ir a CMD y generar el componente en la carpeta pages, para un login,  
+        //con el comando ng g c home... Despues nos vamos al app-routing.module.ts
       }, (error) => {
         console.log(error);
         //47.1-[Quitamos]->alert('Ha ocurrido un error en el sistema');
