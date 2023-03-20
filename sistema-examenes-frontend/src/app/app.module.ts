@@ -15,6 +15,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 //54.- Importamos es del Angular Material
 import { MatCardModule } from '@angular/material/card';
+//58.- Importamos es de Angular Material
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -42,7 +45,9 @@ import { HomeComponent } from './pages/home/home.component';
     FormsModule, //44.3.1 - Agregamos
     HttpClientModule, //44.3 Para funcionar la pagina, debido al error de cargar
     MatSnackBarModule, //45.1 - Agremagos el importe
-    MatCardModule //54.1- Agregamos
+    MatCardModule, //54.1- Agregamos
+    MatToolbarModule, //58.1
+    MatIconModule //58.2... Nos vamos a navbar.component.html
   ],
   providers: [],
   bootstrap: [AppComponent]

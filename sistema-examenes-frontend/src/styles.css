@@ -1,5 +1,11 @@
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: Roboto, 
+    "Helvetica Neue", 
+    sans-serif; 
+    background: #f5f5f5; /*62.-Agregamos este color*/
+}
 
 /*28.Agregamos para centrar*/
 /*Nos vemos al signup la carpeta*/
@@ -22,15 +28,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .ml20{
     margin-left: 20px !important;
 }
-
+  
 .mr20{
-    margin-right: 20px !important;
-}
-
+    margin-right: 60px !important; /*62.1-MODIFICACION*/
+  }
+  
 .mt20{
     margin-top: 20px !important;
 }
-
+  
 .mb20{
     margin-bottom: 20px !important;
 }
@@ -39,17 +45,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .ml10{
     margin-left: 10px !important;
 }
-
+  
 .mr10{
     margin-right: 10px !important;
 }
-
+  
 .mt10{
     margin-top: 10px !important;
 }
-
+  
 .mb10{
     margin-bottom: 10px !important;
+}
+
+.ml70{
+    margin-left: 150px !important; /*62.2-MODIFICACION*/
 }
 
 /*54.3.- nos vamos al login.component.css*/
