@@ -52,7 +52,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter { //HEREDAMOS
             System.out.println("Token Invalido, no empieza con beare string");
         }
 
-        //Si al Authentication no es valida
+        //84.-Si al Authentication no es valida
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null){
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
 
@@ -60,13 +60,16 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter { //HEREDAMOS
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails,null, userDetails.getAuthorities());
 
                 usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-
-                
-
+                SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+            }else{
+                System.out.println("El token no es valido");
             }
 
-        }
+            filterChain.doFilter(request,response); //Ejecutamos el filto, y le enviamos la peticion y respuesta
 
+            //85.-Nos vamos a la carpeta configuracion, y creamos una clase JwtAuthenticationEntryPont
+
+        }
 
     }
 
