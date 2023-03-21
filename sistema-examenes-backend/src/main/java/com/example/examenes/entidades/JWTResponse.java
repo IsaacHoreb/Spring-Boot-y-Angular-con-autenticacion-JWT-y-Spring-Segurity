@@ -1,5 +1,6 @@
 package com.example.examenes.entidades;
-
+//72.-Creamos lo sig
+//73.-Creamos en Sevices/impl, un Class con nombre UserDatailsServiceImpl
 public class JWTResponse {
 
     private String token;
