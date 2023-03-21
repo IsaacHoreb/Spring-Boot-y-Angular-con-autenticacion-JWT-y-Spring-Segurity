@@ -8,6 +8,8 @@ package com.example.examenes.configuraciones;
          esto tendra una llave secreta. <---
 */
 
+//81.-DESPUES_DE PEGAR TODO LO NECESARIO, NOS DEVOLVEMOS A JwtAuthenticationFilter
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
