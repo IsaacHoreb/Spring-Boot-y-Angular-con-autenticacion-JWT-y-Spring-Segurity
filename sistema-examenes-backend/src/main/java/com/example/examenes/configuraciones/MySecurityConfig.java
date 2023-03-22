@@ -62,5 +62,6 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         //91.1
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
+        //92.-Nos vamos a la carpeta controllers, y creamos una clase AuthenticationControllers
     }
 }
