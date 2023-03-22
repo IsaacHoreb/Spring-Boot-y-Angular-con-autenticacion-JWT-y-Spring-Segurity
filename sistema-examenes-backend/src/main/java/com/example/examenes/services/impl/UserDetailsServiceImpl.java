@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 //74.-Implementamos lo siguiente
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService { //Sirve para cargar un User
     @Autowired
     private UsuarioRepository usuarioRepository;
