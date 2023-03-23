@@ -65,4 +65,6 @@ public class AuthenticationController {
     //97.- HACER PRUEBAS EN POSTAM, PARA SABER QUE_TODO CORRE BIEN, CON EL POST, CHEACAR EL USUARIO Y CONTRASEÑA
     //Y QUE GENERE EL TOKEN, Y DESPUES CHECAR CON GET, Y ENTRAR EN LO DE TOKEN
 
+    //98.- NOS VAMOS AL FRONT-END.  En la carpeta app/pages/login/login.component.ts
+
 }

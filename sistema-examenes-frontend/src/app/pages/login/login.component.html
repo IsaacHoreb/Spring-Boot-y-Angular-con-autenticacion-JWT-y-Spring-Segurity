@@ -13,18 +13,23 @@ app.module.ts-->
                     <!--Button-->
                     <h1 class="text-center">Inicio de sesión</h1>
 
-                    <form action="">
+                    <!--104.CAMBIAR A (ngSubmit)="formSubmit"-->
+                    <!--105.Ir al input, y agregar los [(ngModel)]="loginData.username o .password"-->
+                    <form (ngSubmit)="formSubmit()"> 
+
                         <mat-form-field class="full-width" appearance="outline">
                             <!--Continuamos agregando etiquetas-->
                             <mat-label>Nombre de usuario</mat-label>
-                            <input required type="password" matInput placeholder="Digite su contraseña">
+                            <!--105.1 SE AGREGA LOS ngModel y  el name="username"-->
+                            <input [(ngModel)]= "loginData.username" name="username" required matInput placeholder="Digite su contraseña">
                             <mat-hint>El nombre de usuario debe ser valido</mat-hint>
                         </mat-form-field>
 
                         <mat-form-field class="full-width" appearance="outline">
                             <!--Continuamos agregando etiquetas-->
                             <mat-label>Contraseña</mat-label>
-                            <input required type="password" matInput placeholder="Digite su contraseña">
+                            <!--105.2 SE AGREGA LOS ngModel, y en name="password"-->
+                            <input [(ngModel)]="loginData.password" name="password" required type="password" matInput placeholder="Digite su contraseña">
                             <mat-hint>Su contraseña debe ser valido</mat-hint>
                         </mat-form-field>
 
