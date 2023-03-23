@@ -1,5 +1,5 @@
 //3.-Creamos tablas
-package com.example.examenes.entidades;
+package com.example.examenes.modelo;
 
 import javax.persistence.*;
 
@@ -19,7 +19,6 @@ public class UsuarioRol {
     private Rol rol;
 
     //9.-GET Y SET GENERAR
-    //9.1 CONSTRUCTOR VACIO ABAJO
     public Long getUsuarioRolId() {
         return usuarioRolId;
     }
@@ -43,10 +42,4 @@ public class UsuarioRol {
     public void setRol(Rol rol) {
         this.rol = rol;
     }
-
-    //9.2 CONSTRUCTOR VACIO
-    public UsuarioRol(){
-
-    }
-
 }

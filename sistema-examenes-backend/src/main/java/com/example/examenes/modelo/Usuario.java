@@ -1,11 +1,12 @@
-package com.example.examenes.entidades;
 //1.-Creamos las tablas
+package com.example.examenes.modelo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,16 +24,31 @@ public class Usuario implements UserDetails { //66.implementamos UserDetails y m
     private String apellido;
     private String email;
     private String telefono;
-    private boolean enable = true; //es para poder habilitar, y poder hacer lo sig.
+    private boolean enabled = true; //es para poder habilitar, y poder hacer lo sig.
     private String perfil;
 
     //5.- Para relacionarlas
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "usuario")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "usuario")
     @JsonIgnore
-    private Set<UsuarioRol> usuarioRoles = new HashSet<>();     //21.- Para ingorar a los usuario
+    private Set<UsuarioRol> usuarioRoles = new HashSet<>(); //21.- Para ingorar a los usuario
 
     //7.-GENERAMOS GET AND SET
     //7.1 - ABAJO CONSTRUCTOR
+    public Usuario() {
+
+    }
+
+    public Usuario(Long id, String username, String password, String nombre, String apellido, String email, String telefono, boolean enabled, String perfil) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.telefono = telefono;
+        this.enabled = enabled;
+        this.perfil = perfil;
+    }
 
     public Long getId() {
         return id;
@@ -46,25 +62,20 @@ public class Usuario implements UserDetails { //66.implementamos UserDetails y m
         return username;
     }
 
-    @java.lang.Override //66.1 Para cuenta activa por cierto tiempo... true <--
+    @Override //66.1 Para cuenta activa por cierto tiempo... true <--
     public boolean isAccountNonExpired() {
         return true;
     }
 
-    @java.lang.Override
+    @Override
     public boolean isAccountNonLocked() {
-        return true; //66.2... true <--
-    }
+        return true;
+    } //66.2... true <--
 
-    @java.lang.Override
+    @Override
     public boolean isCredentialsNonExpired() {
-        return true; //66.3...true <--
-    }
-
-    @java.lang.Override
-    public boolean isEnabled() {
-        return false;
-    }
+        return true;
+    } //66.3...true <--
 
     public void setUsername(String username) {
         this.username = username;
@@ -72,14 +83,14 @@ public class Usuario implements UserDetails { //66.implementamos UserDetails y m
 
     //67.-DEBEMOS CREAR LA CLASE Authority <-----####
     //68.1-Agregamos_todo lo necesario
-    @java.lang.Override
-    public java.util.Collection<? extends GrantedAuthority> getAuthorities() {
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<Authority> autoridades = new HashSet<>();
         this.usuarioRoles.forEach(usuarioRol -> {
-            autoridades.add(new Authority(usuarioRol.getRol().getNombre()));
+            autoridades.add(new Authority(usuarioRol.getRol().getRolNombre()));
         });
         return autoridades;
-    } //69.-Creamos otra clase con JWTRequest
+    }   //69.-Creamos otra clase con JWTRequest
 
     public String getPassword() {
         return password;
@@ -121,12 +132,12 @@ public class Usuario implements UserDetails { //66.implementamos UserDetails y m
         this.telefono = telefono;
     }
 
-    public boolean isEnable() {
-        return enable;
+    public boolean isEnabled() {
+        return enabled;
     }
 
-    public void setEnable(boolean enable) {
-        this.enable = enable;
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public String getPerfil() {
@@ -144,10 +155,4 @@ public class Usuario implements UserDetails { //66.implementamos UserDetails y m
     public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
         this.usuarioRoles = usuarioRoles;
     }
-
-    //7.2 Consturtor
-    public Usuario(){
-
-    }
-
 }

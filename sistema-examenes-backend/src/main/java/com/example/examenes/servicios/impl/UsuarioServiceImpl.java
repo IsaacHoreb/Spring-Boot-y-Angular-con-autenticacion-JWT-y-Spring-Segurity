@@ -1,11 +1,11 @@
 //13.-Agregamos los servicios
-package com.example.examenes.services.impl;
+package com.example.examenes.servicios.impl;
 
-import com.example.examenes.entidades.Usuario;
-import com.example.examenes.entidades.UsuarioRol;
+import com.example.examenes.modelo.Usuario;
+import com.example.examenes.modelo.UsuarioRol;
 import com.example.examenes.repositorios.RolRepository;
 import com.example.examenes.repositorios.UsuarioRepository;
-import com.example.examenes.services.UsuarioService;
+import com.example.examenes.servicios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,25 +23,19 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     //14.-Es para agregar un nuevo usuario
     @Override
-    public Usuario guardarUsuario(Usuario usuario, Set<UsuarioRol> usuariosRoles) throws Exception {
-
+    public Usuario guardarUsuario(Usuario usuario, Set<UsuarioRol> usuarioRoles) throws Exception {
         Usuario usuarioLocal = usuarioRepository.findByUsername(usuario.getUsername());
-
-        if (usuarioLocal != null){
+        if (usuarioLocal != null) {
             System.out.println("El usuario ya existe");
-            throw new Exception("¡El usuario ya está presente!");
-        }else { //en caso que no exista el usuario
-
-            for (UsuarioRol usuarioRol : usuariosRoles) { //recorro y obtengo el usuario
-                rolRepository.save(usuarioRol.getRol());  //guardo
+            throw new Exception("El usuario ya esta presente");
+        } else {    //en caso que no exista el usuario
+            for (UsuarioRol usuarioRol : usuarioRoles) { //recorro y obtengo el usuario
+                rolRepository.save(usuarioRol.getRol()); //guardo
             }
-
-            usuario.getUsuarioRoles().addAll(usuariosRoles); //Obtener y agregar
+            usuario.getUsuarioRoles().addAll(usuarioRoles); //Obtener y agregar
             usuarioLocal = usuarioRepository.save(usuario);
         }
-
         return usuarioLocal;
-
     }
 
     //18.-Se agreda ya cuando implementamos
@@ -54,4 +48,5 @@ public class UsuarioServiceImpl implements UsuarioService {
     public void eliminarUsuario(Long usuarioId) {
         usuarioRepository.deleteById(usuarioId);
     }
+
 }

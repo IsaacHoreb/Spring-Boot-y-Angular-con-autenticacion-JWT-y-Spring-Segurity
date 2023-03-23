@@ -1,16 +1,10 @@
 package com.example.examenes;
 
-import com.example.examenes.entidades.Rol;
-import com.example.examenes.entidades.Usuario;
-import com.example.examenes.entidades.UsuarioRol;
-import com.example.examenes.services.UsuarioService;
+import com.example.examenes.servicios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.HashSet;
-import java.util.Set;
 
 //16.-Implementamos el CommandLineRunner
 @SpringBootApplication

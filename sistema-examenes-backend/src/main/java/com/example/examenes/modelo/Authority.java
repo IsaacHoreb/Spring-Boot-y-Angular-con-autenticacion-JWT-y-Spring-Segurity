@@ -1,4 +1,4 @@
-package com.example.examenes.entidades;
+package com.example.examenes.modelo;
 
 import org.springframework.security.core.GrantedAuthority;
 
@@ -8,13 +8,14 @@ public class Authority implements GrantedAuthority {
 
     private String authority; //Creamos
 
-    public Authority(String authority) { //Agregamos constructor
+    public Authority(String authority) {
         this.authority = authority;
     }
 
     @Override
-    public String getAuthority() { //return del mismo authority
+    public String getAuthority() {
         return this.authority;
     }
+
     //68.- nos vamos a clase Usuario al punto 67
 }

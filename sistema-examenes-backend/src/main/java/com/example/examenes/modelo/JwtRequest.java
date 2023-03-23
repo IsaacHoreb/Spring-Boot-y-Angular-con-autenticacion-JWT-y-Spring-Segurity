@@ -1,22 +1,23 @@
-package com.example.examenes.entidades;
+package com.example.examenes.modelo;
+
 //ESTO ES DE JWT EN LA PETICIO FALTA EL DE RESPONDER
 // Creamos el JWTResponse --> 71
 
 //70.-Creamos_los_sig.
-public class JWTRequest {
+public class JwtRequest {
 
     private String username;
     private String password;
 
     //Constructor
-    public JWTRequest(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public JwtRequest() {
+
     }
 
     //Constructor vacio
-    public JWTRequest() {
-
+    public JwtRequest(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     //GETTER AND SETTER
@@ -35,5 +36,4 @@ public class JWTRequest {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

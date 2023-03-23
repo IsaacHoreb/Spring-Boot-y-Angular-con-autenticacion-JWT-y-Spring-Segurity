@@ -12,12 +12,13 @@ import java.io.IOException;
 //Esta clase se encarga de manejar los errores
 //86.- Implementamos
 @Component
-public class JwtAuthenticationEntryPont implements AuthenticationEntryPoint {
+public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Usuario no Autorizado");
+        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Usuario no autorizado");
     }
 
     //87.-Creamos en la carpeta configuracion, una class MySecurityConfig
+
 }

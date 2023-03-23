@@ -8,7 +8,7 @@ package com.example.examenes.configuraciones;
          esto tendra una llave secreta. <---
 */
 
-//81.-DESPUES_DE PEGAR TODO LO NECESARIO, NOS DEVOLVEMOS A JwtAuthenticationFilter
+//81.-DESPUES_DE PEGAR_TODO LO NECESARIO, NOS DEVOLVEMOS A JwtAuthenticationFilter
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -21,10 +21,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-@Component //Este component, es para poder inyectarlo desde otra clase, sino, no es posible
+@Component  //Este component, es para poder inyectarlo desde otra clase, sino, no es posible
 public class JwtUtils {
 
-    private String SECRET_KEY = "examportal"; //81.1-LLAVE Modificada
+    private String SECRET_KEY = "examportal";   //81.1-LLAVE Modificada
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -38,6 +38,7 @@ public class JwtUtils {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
     }
+
     private Claims extractAllClaims(String token) {
         return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
     }

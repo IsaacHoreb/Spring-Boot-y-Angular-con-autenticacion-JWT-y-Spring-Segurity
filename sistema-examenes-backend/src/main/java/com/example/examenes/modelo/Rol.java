@@ -1,5 +1,5 @@
 //2.- Creamos tablas
-package com.example.examenes.entidades;
+package com.example.examenes.modelo;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -11,11 +11,21 @@ public class Rol {
 
     @Id
     private Long rolId;
-    private String nombre;
+    private String rolNombre;
 
     //6.-Para relacionarlas
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "rol")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "rol")
     private Set<UsuarioRol> usuarioRoles = new HashSet<>();
+
+    //8.2 - CONSTURTOR VACIO
+    public Rol() {
+
+    }
+    
+    public Rol(Long rolId, String rolNombre) {
+        this.rolId = rolId;
+        this.rolNombre = rolNombre;
+    }
 
     //8.-GET Y SET GENERAR
     //8.1 CREAMOS CONSTRUCTOR ABAJO
@@ -27,12 +37,12 @@ public class Rol {
         this.rolId = rolId;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getRolNombre() {
+        return rolNombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setRolNombre(String rolNombre) {
+        this.rolNombre = rolNombre;
     }
 
     public Set<UsuarioRol> getUsuarioRoles() {
@@ -42,10 +52,4 @@ public class Rol {
     public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
         this.usuarioRoles = usuarioRoles;
     }
-
-    //8.2 - CONSTURTOR VACIO
-    public Rol(){
-
-    }
-
 }
