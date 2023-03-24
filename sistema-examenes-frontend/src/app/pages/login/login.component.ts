@@ -58,7 +58,10 @@ export class LoginComponent implements OnInit {
   }
 
   //116.-Nos vamos al banckend, y comprobamos que todo funcione, al iniciar seccion y genere el token en consola
- 
+  
+  //117.-Regresamos despues de prueba, y nos vamosal login.service.ts
+
+
   //110.-Vamos al cmd, generamos un servicio, en la carpeta raiz del frontend, en
   // src/app/services, generamos con ng g s login y nos vamos a la carpeta comprobando
   //que se genero el servicio. Y nos vamos al login.services.ts
