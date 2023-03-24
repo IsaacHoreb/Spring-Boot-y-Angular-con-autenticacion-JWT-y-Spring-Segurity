@@ -25,6 +25,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
+import { AuthInterceptor, authInterceptorProviders } from './services/auth.interceptro';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatToolbarModule, //58.1
     MatIconModule //58.2... Nos vamos a navbar.component.html
   ],
-  providers: [],
+  providers: [authInterceptorProviders], //131.-TENEMOS QUE AGREGARLO
   bootstrap: [AppComponent]
 })
 export class AppModule { }

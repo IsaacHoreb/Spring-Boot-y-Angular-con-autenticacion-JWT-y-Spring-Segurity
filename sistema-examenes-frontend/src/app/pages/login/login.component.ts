@@ -51,6 +51,11 @@ export class LoginComponent implements OnInit {
     this.loginService.generateToken(this.loginData).subscribe(
       (data: any) => {
         console.log(data);
+        //127.- Ingresamos los sig
+        this.loginService.loginUser(data.token);
+        this.loginService.getCurrentUser().subscribe((user: any) => {
+          console.log(user);
+        })
       }, (error) => {
         console.log(error);
       }
@@ -58,10 +63,8 @@ export class LoginComponent implements OnInit {
   }
 
   //116.-Nos vamos al banckend, y comprobamos que todo funcione, al iniciar seccion y genere el token en consola
-  
   //117.-Regresamos despues de prueba, y nos vamosal login.service.ts
-
-
+  
   //110.-Vamos al cmd, generamos un servicio, en la carpeta raiz del frontend, en
   // src/app/services, generamos con ng g s login y nos vamos a la carpeta comprobando
   //que se genero el servicio. Y nos vamos al login.services.ts

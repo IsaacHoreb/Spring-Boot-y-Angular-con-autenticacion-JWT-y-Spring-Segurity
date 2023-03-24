@@ -67,5 +67,14 @@ export class LoginService {
     let user = this.getUser();
     return user.authoriries[0].authoriries;
   }
-  
+
+  //125.-Metodo para devolver el actual-usuario
+  public getCurrentUser() {
+    return this.http.get(`${baserUrl}/actual-usuario`);
+  }
+
+  //126.-NOS VAMOS AL login.component.ts, en el metodo generateToken
+
+  //127.-Creamos en la carpeta services, un archivo con el nombre = auth.interceptro.ts y nos amos para allá.
+
 }
