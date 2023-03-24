@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
 
   //101.-Creamos
   //107.-Ingresamos
-  constructor(private snack: MatSnackBar) { }
+  //114.-Inyectamos el servicio creado, el loginService
+  constructor(private snack: MatSnackBar, private loginService: LoginService) { }
 
   //Se agrega al implementar
   ngOnInit(): void {
@@ -44,7 +46,23 @@ export class LoginComponent implements OnInit {
       })
       return;
     }
+
+    //115.- 
+    this.loginService.generateToken(this.loginData).subscribe(
+      (data: any) => {
+        console.log(data);
+      }, (error) => {
+        console.log(error);
+      }
+    )
   }
+
+  //116.-Nos vamos al banckend, y comprobamos que todo funcione, al iniciar seccion y genere el token en consola
+ 
+  //110.-Vamos al cmd, generamos un servicio, en la carpeta raiz del frontend, en
+  // src/app/services, generamos con ng g s login y nos vamos a la carpeta comprobando
+  //que se genero el servicio. Y nos vamos al login.services.ts
+
 
   //103.-Nos vamos al login.component.html... en el <form action="">
 
