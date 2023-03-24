@@ -67,4 +67,5 @@ export class LoginService {
     let user = this.getUser();
     return user.authoriries[0].authoriries;
   }
+  
 }
