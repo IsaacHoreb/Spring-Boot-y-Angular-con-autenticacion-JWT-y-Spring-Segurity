@@ -26,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthInterceptor, authInterceptorProviders } from './services/auth.interceptro';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { AuthInterceptor, authInterceptorProviders } from './services/auth.inter
     NavbarComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,21 @@ import { AuthInterceptor, authInterceptorProviders } from './services/auth.inter
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+/*
+  132. Nos vamos a cmd en app/services/pages, y escribimos:
+    ¬mkdir admin
+    ¬mkdir user
+
+  133.- En el CMD entramos a admin, y escribimos:
+    ¬ng g c Dashboard
+
+  134.- En el CMD entramos a user, y escribimos:
+    ¬ng g c user-dashboard
+
+  135.- Nos movems ala carpeta admin/dashboard y en dashboard.component.html
+*/
+
 
 //24.-En el {angular.json} en la parte de style,agregas lo sig.
 //"./node_modules/bootstrap-grid-only-css/dist/css/bootstrap-grid.min.css"
