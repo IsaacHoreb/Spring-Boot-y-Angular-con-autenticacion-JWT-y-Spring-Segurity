@@ -54,17 +54,36 @@ export class LoginComponent implements OnInit {
         //127.- Ingresamos los sig
         this.loginService.loginUser(data.token);
         this.loginService.getCurrentUser().subscribe((user: any) => {
-          console.log(user);
+          this.loginService.setUser(user);//141.-Agregar el login.service
+          console.log(user); //127.1
+
+          //142.-Condicion del ROL
+          if (this.loginService.getUserRole() == 'ADMIN') {
+            //dashboard admin
+            window.location.href = '/admin'
+          } else if (this.loginService.getUser() == 'NORMAL') {
+            //user dashboard
+            window.location.href = '/user-dashboard'
+          } else {
+            //CASO QUE NO SEA NINGUNO
+            this.loginService.logout;
+          }
+
         })
       }, (error) => {
         console.log(error);
+        //143.-
+        this.snack.open("Detalles inválidos , vuelva a intentar", "Aceptar", {
+          duration: 3000
+        //144.-Checamos que funciones 
+        })
       }
     )
   }
 
   //116.-Nos vamos al banckend, y comprobamos que todo funcione, al iniciar seccion y genere el token en consola
   //117.-Regresamos despues de prueba, y nos vamosal login.service.ts
-  
+
   //110.-Vamos al cmd, generamos un servicio, en la carpeta raiz del frontend, en
   // src/app/services, generamos con ng g s login y nos vamos a la carpeta comprobando
   //que se genero el servicio. Y nos vamos al login.services.ts
