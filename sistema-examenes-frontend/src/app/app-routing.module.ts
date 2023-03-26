@@ -5,6 +5,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { AdminGuard } from './services/admin.guard';
+import { NormalGuard } from './services/normal.guard';
 
 //52.-Recordar que aqui modificamos y agregamos rutas
 //52.1- AÑADIRMOS EL pathMatch, para las rutas... Nos vamos a la carpeta login
@@ -18,7 +20,7 @@ const routes: Routes = [
     path: 'signup', //nombre de la carpta
     component: SignupComponent,
     pathMatch: 'full'
-  }, 
+  },
   {
     path: 'login', //nombre de la carpta
     component: LoginComponent,
@@ -27,12 +29,13 @@ const routes: Routes = [
   {
     path: 'admin',
     component: DashboardComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AdminGuard] //152.-Agregamos,ya debes tener el guard
   }, //140.-Agregamos la rutas... checamos que funcion... y nos vamos a login.component.ts
   {
     path: 'user-dashboard',
     component: UserDashboardComponent,
-    pathMatch: 'full'
+    pathMatch: 'full', canActivate: [NormalGuard] //153.-Agregamos,ya debes tener el guard y checar que funcione
   }
 ];
 
