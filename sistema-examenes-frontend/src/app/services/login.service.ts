@@ -65,7 +65,7 @@ export class LoginService {
   //124.- Obtenemos el rol de usuario
   public getUserRole() {
     let user = this.getUser();
-    return user.authoriries[0].authoriries;
+    return user.authorities[0].authority;
   }
 
   //125.-Metodo para devolver el actual-usuario

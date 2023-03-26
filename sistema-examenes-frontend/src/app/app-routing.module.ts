@@ -18,12 +18,12 @@ const routes: Routes = [
     path: 'signup', //nombre de la carpta
     component: SignupComponent,
     pathMatch: 'full'
-  },
+  }, 
   {
     path: 'login', //nombre de la carpta
     component: LoginComponent,
     pathMatch: 'full'
-  }, //139.-Agregamos la rutas
+  }, //139.-Agregamos la rutas, pero DashboardComponent...has click, y agrega en ello el constructor y lo mas
   {
     path: 'admin',
     component: DashboardComponent,

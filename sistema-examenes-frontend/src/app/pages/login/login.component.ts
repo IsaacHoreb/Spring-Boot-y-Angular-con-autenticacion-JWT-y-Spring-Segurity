@@ -54,19 +54,21 @@ export class LoginComponent implements OnInit {
         //127.- Ingresamos los sig
         this.loginService.loginUser(data.token);
         this.loginService.getCurrentUser().subscribe((user: any) => {
+
           this.loginService.setUser(user);//141.-Agregar el login.service
           console.log(user); //127.1
 
           //142.-Condicion del ROL
           if (this.loginService.getUserRole() == 'ADMIN') {
             //dashboard admin
-            window.location.href = '/admin'
-          } else if (this.loginService.getUser() == 'NORMAL') {
+            window.location.href = '/admin';
+
+          } else if (this.loginService.getUserRole() == 'NORMAL') {
             //user dashboard
-            window.location.href = '/user-dashboard'
+            window.location.href = '/user-dashboard';
           } else {
             //CASO QUE NO SEA NINGUNO
-            this.loginService.logout;
+            this.loginService.logout();
           }
 
         })
@@ -75,12 +77,12 @@ export class LoginComponent implements OnInit {
         //143.-
         this.snack.open("Detalles inválidos , vuelva a intentar", "Aceptar", {
           duration: 3000
-        //144.-Checamos que funciones 
+          //144.-Checamos que funciones 
         })
       }
     )
   }
-
+}
   //116.-Nos vamos al banckend, y comprobamos que todo funcione, al iniciar seccion y genere el token en consola
   //117.-Regresamos despues de prueba, y nos vamosal login.service.ts
 
@@ -91,4 +93,4 @@ export class LoginComponent implements OnInit {
 
   //103.-Nos vamos al login.component.html... en el <form action="">
 
-}
+
