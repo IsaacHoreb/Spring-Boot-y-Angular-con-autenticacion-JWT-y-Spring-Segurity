@@ -74,10 +74,16 @@ export class LoginComponent implements OnInit {
         })
       }, (error) => {
         console.log(error);
-        //143.-
+        //143.-AGREAMOS POR SI EXISTE ERRORES
         this.snack.open("Detalles inválidos , vuelva a intentar", "Aceptar", {
           duration: 3000
           //144.-Checamos que funciones 
+          /*
+            145.-Ir al CMD, movernos a app/services y creamos los guard.
+              1.- ng g guard admin --> CanActivate
+              2.- ng g guard normal --> CanActivate
+            146.- NOS VAMOS A : admin.guard.ts
+          */
         })
       }
     )
