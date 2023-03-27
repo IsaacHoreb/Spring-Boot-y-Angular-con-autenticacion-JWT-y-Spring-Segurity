@@ -70,8 +70,8 @@ export class LoginComponent implements OnInit {
             //user dashboard
             //window.location.href = '/user-dashboard';
             this.router.navigate(['user-dashboard']); //165.-Agregamos y comentamos el window#####
-            this.loginService.loginStatusSubjec.next(true); //171.-Añadir
-
+            this.loginService.loginStatusSubjec.next(true); //171.-Añadir y probamos funcion
+                                                            //172.-Nos vamos al BACK-END en MySecurityConfig paso 90
             //166.-Provamos la aplicacion en el navegador
             //167.- Ir al login.service.ts
           } else {

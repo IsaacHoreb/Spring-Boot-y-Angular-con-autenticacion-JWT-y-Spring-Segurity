@@ -12,8 +12,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 //88.- Agregamos la anotacione y la extends
@@ -38,11 +37,21 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
+    //173.-Eliminamos el paso 90, ya que esto fue para no encriptar las contraseña
+    /*
     //90.-Añadimos
     @Bean
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
+     */
+
+    //174.-Esto se encarga de encriptar el password
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+    //175.-Ir a controladores entramos a UsuarioController
 
     //92.-SE AÑADE, SUPER IMPORTANTE, SI NO, NO GENERAR EL TOKEN
     @Override

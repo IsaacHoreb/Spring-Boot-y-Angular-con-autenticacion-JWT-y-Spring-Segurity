@@ -5,6 +5,7 @@ import com.example.examenes.modelo.Usuario;
 import com.example.examenes.modelo.UsuarioRol;
 import com.example.examenes.servicios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
@@ -19,11 +20,19 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
+    //176.-Inyectamos la dependencia, esto aplica la instancia y singletos
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     //19.1-METODOS POST
     @PostMapping("/")
     public Usuario guardarUsuario(@RequestBody Usuario usuario) throws Exception {
         usuario.setPerfil("default.png");//44.1 - Agremamos una img por defecto y nos vamos al Frontend
-        // en signup.componet.html o formulario mejor conocido
+                                         // en signup.componet.html o formulario mejor conocido
+
+        //177.- Ahora si, ya para encritar la contraseña
+        usuario.setPassword(this.bCryptPasswordEncoder.encode(usuario.getPassword()));
+
         //44.2 - >> RECORDAR : DEBEMOS AGREGAR EL HttpClientModule  A app.modules.ts para que cargue la pagina
         Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
