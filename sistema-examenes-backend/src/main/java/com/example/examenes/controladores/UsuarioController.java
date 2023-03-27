@@ -32,6 +32,9 @@ public class UsuarioController {
 
         //177.- Ahora si, ya para encritar la contraseña
         usuario.setPassword(this.bCryptPasswordEncoder.encode(usuario.getPassword()));
+        //178. Checamos que si encripte los password
+        //179. Creamos carpeta excepciones, y las clases UsuarioFoundExcepciones y UsuarioNotFoundExcepciones
+        //180. Ir a UsuarioFoundExcepcion
 
         //44.2 - >> RECORDAR : DEBEMOS AGREGAR EL HttpClientModule  A app.modules.ts para que cargue la pagina
         Set<UsuarioRol> usuarioRoles = new HashSet<>();

@@ -1,6 +1,7 @@
 package com.example.examenes.controladores;
 
 import com.example.examenes.configuraciones.JwtUtils;
+import com.example.examenes.excepciones.UsuarioFoundExcepcion;
 import com.example.examenes.modelo.JwtRequest;
 import com.example.examenes.modelo.JwtResponse;
 import com.example.examenes.modelo.Usuario;
@@ -35,7 +36,8 @@ public class AuthenticationController {
     public ResponseEntity<?> generarToken(@RequestBody JwtRequest jwtRequest) throws Exception {
         try{
             autenticar(jwtRequest.getUsername(),jwtRequest.getPassword());
-        }catch (Exception exception){
+        }catch (UsuarioFoundExcepcion exception){ //188.- Cabiamos Exception por el UsuarioFounExcepcion
+                                                  //189.- Ir a UsuarioServiceImp paso 14
             exception.printStackTrace();
             throw new Exception("Usuario no encontrado");
         }
