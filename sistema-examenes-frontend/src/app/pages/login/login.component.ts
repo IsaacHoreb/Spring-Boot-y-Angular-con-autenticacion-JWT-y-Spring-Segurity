@@ -64,16 +64,16 @@ export class LoginComponent implements OnInit {
           if (this.loginService.getUserRole() == 'ADMIN') {
             //dashboard admin
             //window.location.href = '/admin';
-            
-            //####164.-Agregamos y comentamos el window#####
-            this.router.navigate(['admin']);
+            this.router.navigate(['admin']); //164.-Agregamos y comentamos el window#####
+            this.loginService.loginStatusSubjec.next(true); //170.-Añadir
           } else if (this.loginService.getUserRole() == 'NORMAL') {
             //user dashboard
             //window.location.href = '/user-dashboard';
-            
-            //####165.-Agregamos y comentamos el window#####
-             this.router.navigate(['user-dashboard']);
+            this.router.navigate(['user-dashboard']); //165.-Agregamos y comentamos el window#####
+            this.loginService.loginStatusSubjec.next(true); //171.-Añadir
+
             //166.-Provamos la aplicacion en el navegador
+            //167.- Ir al login.service.ts
           } else {
             //CASO QUE NO SEA NINGUNO
             this.loginService.logout();
@@ -103,7 +103,4 @@ export class LoginComponent implements OnInit {
   // src/app/services, generamos con ng g s login y nos vamos a la carpeta comprobando
   //que se genero el servicio. Y nos vamos al login.services.ts
 
-
   //103.-Nos vamos al login.component.html... en el <form action="">
-
-

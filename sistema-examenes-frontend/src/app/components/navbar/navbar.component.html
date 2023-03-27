@@ -34,8 +34,8 @@
     <a 
         *ngIf= "login.isLoggeIn()"
         (click) = "logout()" 
-        style="margin-right: 50px;"
-        mat-icon-button class="Example-icon favorite-icon mr20 ml70" aria-label="Example icon-button with heart icon">
+        style="margin-right: 10px;"
+        mat-icon-button class="Example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         Cerrar Sesión
     </a>
 
@@ -44,7 +44,7 @@
         *ngIf = "login.isLoggeIn()"
         mat-button
         style = "margin-right: 10px;"
-        class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        class="Example-icon favorite-icon ml70" aria-label="Example icon-button with heart icon">
         {{ login.getUser().username }}
     </button>
 

@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import baserUrl from './helper';
 
 @Injectable({
@@ -8,6 +9,10 @@ import baserUrl from './helper';
 })
 
 export class LoginService {
+
+  //168.- AGREGAMOS
+  public loginStatusSubjec = new Subject<boolean>();
+  //169.-Regresar al login.component.ts en el paso 164
 
   //111.-Agregamos en HttpClient
   constructor(private http: HttpClient) { }
