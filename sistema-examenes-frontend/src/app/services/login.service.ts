@@ -24,7 +24,7 @@ export class LoginService {
   }
 
   //119.-Metodo para comprobar si estoy conecptado o no
-  public isLoggeIn() {
+  public isLoggeIn() { 
     let tokenStr = localStorage.getItem('token');
 
     if (tokenStr == undefined || tokenStr == '' || tokenStr == null) {

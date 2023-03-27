@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Route, Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   //101.-Creamos
   //107.-Ingresamos
   //114.-Inyectamos el servicio creado, el loginService
-  constructor(private snack: MatSnackBar, private loginService: LoginService) { }
+  //164.1-Agregando el router
+  constructor(private snack: MatSnackBar, private loginService: LoginService, private router: Router) { }
 
   //Se agrega al implementar
   ngOnInit(): void {
@@ -61,16 +63,21 @@ export class LoginComponent implements OnInit {
           //142.-Condicion del ROL
           if (this.loginService.getUserRole() == 'ADMIN') {
             //dashboard admin
-            window.location.href = '/admin';
-
+            //window.location.href = '/admin';
+            
+            //####164.-Agregamos y comentamos el window#####
+            this.router.navigate(['admin']);
           } else if (this.loginService.getUserRole() == 'NORMAL') {
             //user dashboard
-            window.location.href = '/user-dashboard';
+            //window.location.href = '/user-dashboard';
+            
+            //####165.-Agregamos y comentamos el window#####
+             this.router.navigate(['user-dashboard']);
+            //166.-Provamos la aplicacion en el navegador
           } else {
             //CASO QUE NO SEA NINGUNO
             this.loginService.logout();
           }
-
         })
       }, (error) => {
         console.log(error);

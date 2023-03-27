@@ -7,16 +7,49 @@
     <!--59.2 -->
     <span>Portal de exámenes</span>
     <span class="example-spacer"></span>
+    
     <!--59.3 -->
-    <a [routerLink] = "'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <!--158.-Agregamos para modificar *ngIf (Esto sirve de impervinculo para conexion)
+        *ngIf= "!login.isLoggeIn()" es mayor para evitar mostrar la pestaña de iniciar seccion
+    #CHECAS LA MEDIDAS DE LAS PESTAÑA COMO TE ACOMODES MEJOR#-->
+    <a 
+        *ngIf= "!login.isLoggeIn()"
+        [routerLink] = "'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         Iniciar Sección
     </a>
+    
     <!--59.4 -->
-    <a [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon mr20 ml70" aria-label="Example icon-button with heart icon">
+    <!--159.-Agregamos para modificar *ngIf (Esto sirve de impervinculo para conexion)
+        *ngIf= "!login.isLoggeIn()" es mayor para evitar mostrar la pestaña de iniciar seccion
+        checar el paso *119-->
+    <a 
+        *ngIf= "!login.isLoggeIn()"
+        [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon mr20 ml70" aria-label="Example icon-button with heart icon">
         Registrar
     </a>
+
+    <!--160 *ngIf= "login.isLoggeIn()" quite el !, ya que si estamos conectado, nos
+        muestre la pestaña de cerrar sesión-->
+    <!--161.Agrego el (click) = logout(), checar el paso *156-->
+    <a 
+        *ngIf= "login.isLoggeIn()"
+        (click) = "logout()" 
+        style="margin-right: 50px;"
+        mat-icon-button class="Example-icon favorite-icon mr20 ml70" aria-label="Example icon-button with heart icon">
+        Cerrar Sesión
+    </a>
+
+    <!--162.Agregar boton y sus complementos-->
+    <button
+        *ngIf = "login.isLoggeIn()"
+        mat-button
+        style = "margin-right: 10px;"
+        class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        {{ login.getUser().username }}
+    </button>
+
+    <!--163.Nos vamos a login.component.ts a paso 142-->
 
     <!--59.5.Nos vamos a navbar.component.cs-->
 
 </mat-toolbar>
-

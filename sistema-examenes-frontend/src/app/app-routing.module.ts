@@ -39,6 +39,8 @@ const routes: Routes = [
   }
 ];
 
+ //154.-despues nos vamos a components/navbar y en navbar.component.ts
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
