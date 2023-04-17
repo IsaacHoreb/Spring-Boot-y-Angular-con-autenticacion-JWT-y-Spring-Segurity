@@ -8,6 +8,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 
 //52.-Recordar que aqui modificamos y agregamos rutas
 //52.1- AÑADIRMOS EL pathMatch, para las rutas... Nos vamos a la carpeta login
@@ -30,12 +31,18 @@ const routes: Routes = [
   {
     path: 'admin',
     component: DashboardComponent,
-    pathMatch: 'full',
+    //209.-Quitar para poder acceder
+    //pathMatch: 'full', 
     canActivate: [AdminGuard], //152.-Agregamos,ya debes tener el guard
     children: [ //203.-Agregamos esto
       {
         path: 'profile',
         component: ProfileComponent
+      },
+      { //204.-Agremago otro mas
+        path: '',
+        component: WelcomeComponent
+        //205.-Ir ala carpeta profile en .html
       }
     ]
   }, //140.-Agregamos la rutas... checamos que funcion... y nos vamos a login.component.ts
