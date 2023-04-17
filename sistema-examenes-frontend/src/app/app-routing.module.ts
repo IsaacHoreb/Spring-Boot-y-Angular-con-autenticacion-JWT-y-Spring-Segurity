@@ -7,6 +7,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 //52.-Recordar que aqui modificamos y agregamos rutas
 //52.1- AÑADIRMOS EL pathMatch, para las rutas... Nos vamos a la carpeta login
@@ -30,16 +31,23 @@ const routes: Routes = [
     path: 'admin',
     component: DashboardComponent,
     pathMatch: 'full',
-    canActivate: [AdminGuard] //152.-Agregamos,ya debes tener el guard
+    canActivate: [AdminGuard], //152.-Agregamos,ya debes tener el guard
+    children: [ //203.-Agregamos esto
+      {
+        path: 'profile',
+        component: ProfileComponent
+      }
+    ]
   }, //140.-Agregamos la rutas... checamos que funcion... y nos vamos a login.component.ts
   {
     path: 'user-dashboard',
     component: UserDashboardComponent,
-    pathMatch: 'full', canActivate: [NormalGuard] //153.-Agregamos,ya debes tener el guard y checar que funcione
+    pathMatch: 'full',
+    canActivate: [NormalGuard] //153.-Agregamos,ya debes tener el guard y checar que funcione
   }
 ];
 
- //154.-despues nos vamos a components/navbar y en navbar.component.ts
+//154.-despues nos vamos a components/navbar y en navbar.component.ts
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

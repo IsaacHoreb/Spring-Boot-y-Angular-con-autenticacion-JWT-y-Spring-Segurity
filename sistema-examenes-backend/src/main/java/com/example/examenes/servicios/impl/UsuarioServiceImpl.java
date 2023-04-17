@@ -40,6 +40,11 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioLocal;
     }
 
+    //191.-Probamos que funcione bien_todo
+    //192.-DESPUES IR AL FRONTEND Y METERSE AL CMD Y BUSCAMOS LA RUTA DE pages y creamo lo siguiente:
+    //ng g c profile
+    //193.-Ir a la carpeta profile (recien creada)
+
     //18.-Se agreda ya cuando implementamos
     @Override
     public Usuario obtenerUsuario(String username) {

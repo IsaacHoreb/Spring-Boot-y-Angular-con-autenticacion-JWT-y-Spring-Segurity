@@ -18,6 +18,8 @@ import { MatCardModule } from '@angular/material/card';
 //58.- Importamos es de Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+//198.- Importamos de Angular material
+import { MatListModule } from '@angular/material/list';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -28,6 +30,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AuthInterceptor, authInterceptorProviders } from './services/auth.interceptro';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,9 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     LoginComponent,
     HomeComponent,
     DashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ProfileComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +58,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     MatSnackBarModule, //45.1 - Agremagos el importe
     MatCardModule, //54.1- Agregamos
     MatToolbarModule, //58.1
-    MatIconModule //58.2... Nos vamos a navbar.component.html
+    MatIconModule, //58.2... Nos vamos a navbar.component.html
+    MatListModule //198.- Ir despues a CMD y en la carpeta pages/admin ingresamos -> ng g c sidebar, despues que se crea, ir al .html
   ],
   providers: [authInterceptorProviders], //131.-TENEMOS QUE AGREGARLO
   bootstrap: [AppComponent]
