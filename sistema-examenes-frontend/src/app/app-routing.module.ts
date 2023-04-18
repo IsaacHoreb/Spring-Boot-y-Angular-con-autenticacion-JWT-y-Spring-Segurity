@@ -33,6 +33,10 @@ const routes: Routes = [
     component: DashboardComponent,
     //209.-Quitar para poder acceder
     //pathMatch: 'full', 
+    
+    //210.-Despues que fuencione todo bien, ir a profile.component.ts
+
+
     canActivate: [AdminGuard], //152.-Agregamos,ya debes tener el guard
     children: [ //203.-Agregamos esto
       {

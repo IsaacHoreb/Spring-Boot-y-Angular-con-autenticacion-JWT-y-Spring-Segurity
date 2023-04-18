@@ -3,7 +3,7 @@
 <!--195.-Ir a admin/dashboard y entrar a dashboard.component.html-->
 
 <!--206.-Agregamo lo siguiente-->
-<mat-card>
+<mat-card style="margin-left: 10px;"> <!--220.-AGREGAMOS EL style="" y irse a dashboard.component.html--> 
     <h1>Detalles del Perfil</h1>
     <mat-card-content>
         <div class="bootstrap-wrapper">
@@ -13,30 +13,33 @@
                     alt=""
                     class="profile-image">
 
-                    <h1 class="mt20">Eduardo Gomez Peralta</h1>
+                    <!--213.-Agregamo los corchete para obtener-->
+                    <h1 class="mt20"> {{ user.nombre }} {{ user.apellido }} </h1>
                 </div>
+                <!--214.-Agregamo los corchete para obtener-->
+                <!--215.-Despues que todo funcione, ir a navbar.component.html-->
                 <div class="row">
                     <div class="col-md-10 offset-md-1">
                         <table class="table text-center">
                             <tr>
                                 <td>Nombre del usuario</td>
-                                <td>Eduardo Gomez Peralta</td>
+                                <td> {{ user.nombre }} </td>
                             </tr>
                             <tr>
                                 <td>ID</td>
-                                <td>123342</td>
+                                <td> {{ user.id }} </td>
                             </tr>
                             <tr>
                                 <td>Telefono</td>
-                                <td>4351115678</td>
+                                <td> {{ user.telefono }} </td>
                             </tr>
                             <tr>
                                 <td>ROL</td>
-                                <td>Administrador</td>
+                                <td> {{ user.authorities[0].authority }} </td>
                             </tr>
                             <tr>
                                 <td>Estado</td>
-                                <td>Activo</td>
+                                <td> {{ user.enable ? "Activo" : "No Activo" }} </td>
                             </tr>
                         </table>
                     </div>

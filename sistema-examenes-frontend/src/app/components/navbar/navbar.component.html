@@ -40,11 +40,15 @@
     </a>
 
     <!--162.Agregar boton y sus complementos-->
+    <!--216.-Agregamos el routerLink = "/admin/profile", esto aparece alado de cerrar seccion, es para un funcionamiento-->
+    <!--217.-Ir a sidebar.component.html-->
     <button
         *ngIf = "login.isLoggeIn()"
         mat-button
         style = "margin-right: 10px;"
-        class="Example-icon favorite-icon ml70" aria-label="Example icon-button with heart icon">
+        class="Example-icon favorite-icon ml70"
+        routerLink = "/admin/profile"  
+        aria-label="Example icon-button with heart icon">
         {{ login.getUser().username }}
     </button>
 
