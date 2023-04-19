@@ -103,5 +103,6 @@ public class Pregunta {
     public Pregunta() {
 
     }
+    //239.-Ir a repositorios y crear interfaces[CategoriaRepository]
 
 }
