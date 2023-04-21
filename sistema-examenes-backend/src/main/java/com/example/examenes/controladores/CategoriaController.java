@@ -1,12 +1,13 @@
 //255.-Creamo el controlador de categoria
 //256.-Despues de agregar_todo, probamo en Postam
+//257.-Despues creamos PreguntaController
 package com.example.examenes.controladores;
 
 import com.example.examenes.modelo.Categoria;
 import com.example.examenes.servicios.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*; 
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/categoria")
