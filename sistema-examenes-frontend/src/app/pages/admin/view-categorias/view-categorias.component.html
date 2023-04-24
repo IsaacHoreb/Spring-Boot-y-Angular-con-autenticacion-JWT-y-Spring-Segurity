@@ -1,0 +1,17 @@
+<!--270.Llamamo al objeto que tenemos en el .ts--->
+<mat-card>
+    <mat-list> 
+        <div mat-subheader>
+            Todas las Categorías
+        </div>
+        <mat-list-item *ngFor = "let c of categorias">
+            <div mat-line> {{ c.titulo }} </div>
+            <div mat-line> {{ c.descripcion }} </div>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+
+    <div class="container text-center mt20">
+        <button mat-raised-button color="primary">Agregar categoria</button>
+    </div>
+</mat-card>

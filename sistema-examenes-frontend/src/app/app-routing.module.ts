@@ -9,6 +9,7 @@ import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
 
 //52.-Recordar que aqui modificamos y agregamos rutas
 //52.1- AÑADIRMOS EL pathMatch, para las rutas... Nos vamos a la carpeta login
@@ -47,7 +48,11 @@ const routes: Routes = [
         path: '',
         component: WelcomeComponent
         //205.-Ir ala carpeta profile en .html
-      }
+      },//264.-Agregamos la rutas de los componentes
+      {
+        path: 'categorias',
+        component: ViewCategoriasComponent
+      }//265.-Ir a sidebar en el .html
     ]
   }, //140.-Agregamos la rutas... checamos que funcion... y nos vamos a login.component.ts
   {

@@ -1,4 +1,8 @@
 //260.-Creamos ExamenControllers
+//261.-Checar con Posmat y verificar
+//262.-Nos vamos al Frontend en src/app/pages/admin y creamos con:
+// ng g c view-categorias y ng g c add-categorias
+//263.-Despues, ir a app-routing.modules.ts debajo del punto 205
 package com.example.examenes.controladores;
 
 import com.example.examenes.modelo.Examen;
