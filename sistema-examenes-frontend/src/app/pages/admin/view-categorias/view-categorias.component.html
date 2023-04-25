@@ -1,17 +1,22 @@
 <!--270.Llamamo al objeto que tenemos en el .ts--->
 <mat-card>
-    <mat-list> 
+    <mat-list>
         <div mat-subheader>
             Todas las Categorías
         </div>
-        <mat-list-item *ngFor = "let c of categorias">
-            <div mat-line> {{ c.titulo }} </div>
-            <div mat-line> {{ c.descripcion }} </div>
+        <mat-list-item *ngFor= "let c of categorias">
+            <mat-icon mat-list-icon class="category-icon">category</mat-icon>
+            <!--275.-Para mostrar la categoria -->
+            <!--276.-Y agregamo estilos en CSS en esta misma carpeta pero en .css-->
+            <!--277.-Ir app-routing.module.ts-->
+            <div mat-line style="display: inline-block; vertical-align: middle;"> {{ c.titulo }} <br> {{ c.descripcion }} </div>
             <mat-divider></mat-divider>
-        </mat-list-item>
+          </mat-list-item>
     </mat-list>
 
     <div class="container text-center mt20">
         <button mat-raised-button color="primary">Agregar categoria</button>
     </div>
 </mat-card>
+<!--271.-Ir al CMD y en app/services y creamos con ng g s categoria--> 
+<!--272.-Ir a services en categoria.service.ts-->
