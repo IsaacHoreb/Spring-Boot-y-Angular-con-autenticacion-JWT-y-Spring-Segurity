@@ -1,23 +1,31 @@
 <!--282.-Agregamos-->
 <!--283.-Despues de agregar, ir a add-categoria.css y agregarmos estilos-->
 <!--284.-Regresamos y chacmos que todo funcione correctamente-->
+<!--285.-Ir a view-categorias.component.html-->
 <mat-card>
     <h1>Agregar Categoría</h1>
     <mat-card-content>
         <div class="bootstrap-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <form action="">
+                    <!--289.-Agregamos el (ngSubmit) en el form, en input
+                    agregamo el required y el [(ngModel)]-->
+                    <!--290-Ir a add-categorias.component.ts-->
+                    <form (ngSubmit)= "formSubmit()">
                         <mat-form-field class="w100" appearance="outline">
                             <mat-label>Titulo</mat-label>
                             <input type="text"
+                            required
                             autofocus
                             type="text"
                             name="titulo"
                             matInput
                             placeholder="Digite el titulo de la categoría"
+                            [(ngModel)] = "categoria.titulo"
                             >
                         </mat-form-field>
+                        <!--293.-Agregamo el [(ngModel)] = "categoria.descripcion" en </textarea>-->
+                        <!--294-Ir a add-categorias.component.ts-->
                         <mat-form-field class="w100" appearance="outline">
                             <mat-label>Descripcion</mat-label>
                             <textarea
@@ -25,6 +33,7 @@
                             matInput
                             placeholder="Digite la descripcion de la categoria"
                             rows="15"
+                            [(ngModel)] = "categoria.descripcion"
                             >
                             </textarea>
                         </mat-form-field>

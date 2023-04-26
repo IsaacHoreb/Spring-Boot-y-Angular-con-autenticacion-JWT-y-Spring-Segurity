@@ -17,5 +17,10 @@ export class CategoriaService {
     return this.http.get(`${baserUrl}/categoria/`)
   }
 
+  //288.-Creamos metodo
+  public agregarCategorias(categoria: any) {
+    return this.http.post(`${baserUrl}/categoria/`, categoria)
+  }
+
 }
 //274.-Ir a view-categoria.component.ts
