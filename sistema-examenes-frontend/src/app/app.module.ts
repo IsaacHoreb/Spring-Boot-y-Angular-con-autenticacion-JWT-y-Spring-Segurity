@@ -35,6 +35,7 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
 import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
+import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categor
     SidebarComponent,
     WelcomeComponent,
     ViewCategoriasComponent,
-    AddCategoriasComponent
+    AddCategoriasComponent,
+    ViewExamenesComponent
   ],
   imports: [
     BrowserModule,

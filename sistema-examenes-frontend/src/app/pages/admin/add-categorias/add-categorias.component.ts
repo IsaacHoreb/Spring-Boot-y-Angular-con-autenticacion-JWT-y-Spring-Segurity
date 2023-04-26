@@ -19,6 +19,9 @@ export class AddCategoriasComponent implements OnInit {
   }
 
   //295.-Agregamos al constructor
+  //296.-Depsues que funcione correcto todo, ir al CMD en src/app/pages/admin
+  //añadimos ng g c view-examenes.
+  //297.-Despues que se crea, ir app-routing.module.ts
   constructor(private categoriaService: CategoriaService, private snack: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {

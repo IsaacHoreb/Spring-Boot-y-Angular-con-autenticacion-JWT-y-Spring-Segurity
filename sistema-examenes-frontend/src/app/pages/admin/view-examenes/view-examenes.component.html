@@ -1,0 +1,29 @@
+<!--302.Ir al CMD, y crear en la carpeta services y escribes ng g s examen-->
+<!--303.-Despues nos vamos a examen.services.ts-->
+<!--308.-Ingresamos lo sig.-->
+<mat-card class="mt10" *ngFor= "let e of examenes">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>
+                {{e.titulo}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{e.categoria.titulo}}
+            </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button color="primary">Preguntas</button>
+            <button mat-stroked-button color="primary" class="ml20">Puntos máximos {{ e.puntoMaximos }} </button>
+            <button mat-stroked-button color="primary" class="ml20">Preguntas {{ e.numerosDePreguntas }} </button>
+            <button mat-flat-button color="primary" class="ml20">Actualizar</button>
+            <button mat-flat-button color="primary" class="ml20">Intentos</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
+
+<div class="container text-center mt20">
+    <button mat-raised-button color="primary">Agregar cuestionario</button>
+</div>
+
+<!--309.-Ir al view-examenes.component.css, agregamos estilos y regresamos de vuelta-->

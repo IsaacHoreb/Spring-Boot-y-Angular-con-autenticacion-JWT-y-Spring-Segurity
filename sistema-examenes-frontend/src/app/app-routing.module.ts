@@ -11,6 +11,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
 import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
+import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
+
 
 //52.-Recordar que aqui modificamos y agregamos rutas
 //52.1- AÑADIRMOS EL pathMatch, para las rutas... Nos vamos a la carpeta login
@@ -57,7 +59,11 @@ const routes: Routes = [
       {//278.- Ruta de add-categorias
         path: 'add-categorias',
         component: AddCategoriasComponent
-      }//279.- Ir a sidebar.component.html
+      },//279.- Ir a sidebar.component.html
+      {//298.-Agregamo la ruta examenes
+        path: 'examenes',
+        component: ViewExamenesComponent
+      }//299.-Ir a sidebar.component.html
     ]
   }, //140.-Agregamos la rutas... checamos que funcion... y nos vamos a login.component.ts
   {
