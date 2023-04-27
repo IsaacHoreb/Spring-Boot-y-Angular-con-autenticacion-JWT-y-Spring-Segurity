@@ -12,6 +12,7 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
 import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
 import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
+import { AddExamenComponent } from './pages/admin/add-examen/add-examen.component';
 
 
 //52.-Recordar que aqui modificamos y agregamos rutas
@@ -63,7 +64,11 @@ const routes: Routes = [
       {//298.-Agregamo la ruta examenes
         path: 'examenes',
         component: ViewExamenesComponent
-      }//299.-Ir a sidebar.component.html
+      },//299.-Ir a sidebar.component.html
+      {//312.-Añadimos la ruta
+        path: 'add-examen',
+        component: AddExamenComponent
+      }//313.-Ir al sidebar.component.html
     ]
   }, //140.-Agregamos la rutas... checamos que funcion... y nos vamos a login.component.ts
   {

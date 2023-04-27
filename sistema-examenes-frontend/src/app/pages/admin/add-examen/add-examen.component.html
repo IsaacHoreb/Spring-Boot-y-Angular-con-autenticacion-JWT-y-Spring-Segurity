@@ -1,0 +1,54 @@
+<!--318.-Agregamos-->
+<mat-card>
+    <h1>Agregar nuevo examen</h1>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form>
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Titulo</mat-label>
+                    <input 
+                    type="text"
+                    name="titulo"
+                    placeholder="Digite el titulo"
+                    matInput>
+                </mat-form-field>
+
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Descripcion</mat-label>
+                    <textarea
+                    type="text"
+                    name="descripcion"
+                    placeholder="Digite la descripcion"
+                    matInput
+                    rows="8"></textarea>
+                </mat-form-field>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="w100" appearance="fill">
+                            <mat-label>Puntos máximos</mat-label>
+                            <input 
+                            type="text"
+                            name="puntosMaximos"
+                            placeholder="Digite la cantidad de puntos"
+                            matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-md-6">
+                        <mat-form-field class="w100" appearance="fill">
+                            <mat-label>Números de preguntas</mat-label>
+                            <input 
+                            type="text"
+                            name="numeroDePreguntas"
+                            placeholder="Digite la cantidad de preguntas"
+                            matInput>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!--319.-Ir a este mismo archivo pero en css
+                        y regresamos aqui-->
+            </form>
+        </div>
+    </div>
+</mat-card>
