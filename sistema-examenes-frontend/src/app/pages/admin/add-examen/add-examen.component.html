@@ -6,7 +6,9 @@
             <form>
                 <mat-form-field class="w100" appearance="fill">
                     <mat-label>Titulo</mat-label>
+                    <!--327.-Añadimos el [(ngModel)]-->
                     <input 
+                    [(ngModel)] = "examenData.titulo"
                     type="text"
                     name="titulo"
                     placeholder="Digite el titulo"
@@ -15,7 +17,9 @@
 
                 <mat-form-field class="w100" appearance="fill">
                     <mat-label>Descripcion</mat-label>
+                    <!--328.-Añadimos el [(ngModel)]-->
                     <textarea
+                    [(ngModel)] = "examenData.descricion"
                     type="text"
                     name="descripcion"
                     placeholder="Digite la descripcion"
@@ -27,7 +31,9 @@
                     <div class="col-md-6">
                         <mat-form-field class="w100" appearance="fill">
                             <mat-label>Puntos máximos</mat-label>
+                            <!--329.-Añadimos el [(ngModel)]-->
                             <input 
+                            [(ngModel)] = "examenData.puntosMaximos"
                             type="text"
                             name="puntosMaximos"
                             placeholder="Digite la cantidad de puntos"
@@ -38,7 +44,9 @@
                     <div class="col-md-6">
                         <mat-form-field class="w100" appearance="fill">
                             <mat-label>Números de preguntas</mat-label>
+                            <!--330.-Añadimos el [(ngModel)]-->
                             <input 
+                            [(ngModel)] = "examenData.numerosDepreguntas"
                             type="text"
                             name="numeroDePreguntas"
                             placeholder="Digite la cantidad de preguntas"
@@ -46,8 +54,31 @@
                         </mat-form-field>
                     </div>
                 </div>
-                <!--319.-Ir a este mismo archivo pero en css
-                        y regresamos aqui-->
+                <!--319.-Ir a este mismo archivo pero en css y regresamos aqui-->
+                <!--320,.Ir a Angular Material y buscamo el: Slide-toggle 
+                e importamos en -> app.module.ts-->
+                
+                <!--322.-Agregamos como casilla de activacion/desactivacion-->
+                <!--323.Ir a Angular Material y buscamo el: Select 
+                    e importamos en -> app.module.ts-->
+                <mat-slide-toggle class="mt20" [(ngModel)] = "examenData.activo" color="primary">
+                   Estado de publicación
+                </mat-slide-toggle>
+
+                <!--331.-Añadimos-->
+                <mat-form-field appearance="fill" class="mt20 w100">
+                    <mat-label>Categorías</mat-label>
+                    <mat-select name="categoria" [(ngModel)] = "examenData.categoria.categoriaId">
+                        <mat-option *ngFor = "let c of categorias" [value]="c.categoriaId">
+                            {{c.titulo}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <!--332-->
+                <div class="container text-center">
+                    <button mat-raised-button color="primary">Agregar</button>
+                </div>
             </form>
         </div>
     </div>

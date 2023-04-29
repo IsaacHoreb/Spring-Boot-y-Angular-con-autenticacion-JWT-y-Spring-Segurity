@@ -20,6 +20,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 //198.- Importamos de Angular material
 import { MatListModule } from '@angular/material/list';
+//321.-Importamos de Angular Material
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+//324.- Importamos de Angular Material
+import {MatSelectModule} from '@angular/material/select';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -69,7 +73,9 @@ import { AddExamenComponent } from './pages/admin/add-examen/add-examen.componen
     MatCardModule, //54.1- Agregamos
     MatToolbarModule, //58.1
     MatIconModule, //58.2... Nos vamos a navbar.component.html
-    MatListModule //198.- Ir despues a CMD y en la carpeta pages/admin ingresamos -> ng g c sidebar, despues que se crea, ir al .html
+    MatListModule, //198.- Ir despues a CMD y en la carpeta pages/admin ingresamos -> ng g c sidebar, despues que se crea, ir al .html
+    MatSlideToggleModule, //321.1 Añadimos y nos vamos a add-examen.component.html
+    MatSelectModule //324.1-Añadimos y nos vamos a add-examen.component.ts
   ],
   providers: [authInterceptorProviders], //131.-TENEMOS QUE AGREGARLO
   bootstrap: [AppComponent]
