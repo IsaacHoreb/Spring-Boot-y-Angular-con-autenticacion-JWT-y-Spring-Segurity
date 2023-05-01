@@ -3,7 +3,8 @@
     <h1>Agregar nuevo examen</h1>
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <form>
+            <!--335.2-Agregamos para poder validadr y guardar los datos-->
+            <form (ngSubmit)="guardarCuestionario()">
                 <mat-form-field class="w100" appearance="fill">
                     <mat-label>Titulo</mat-label>
                     <!--327.-Añadimos el [(ngModel)]-->
@@ -33,7 +34,7 @@
                             <mat-label>Puntos máximos</mat-label>
                             <!--329.-Añadimos el [(ngModel)]-->
                             <input 
-                            [(ngModel)] = "examenData.puntosMaxiomos"
+                            [(ngModel)] = "examenData.puntoMaxiomos"
                             type="text"
                             [ngModelOptions]="{standalone: true}"
                             placeholder="Digite la cantidad de puntos"
@@ -46,7 +47,7 @@
                             <mat-label>Números de preguntas</mat-label>
                             <!--330.-Añadimos el [(ngModel)]-->
                             <input 
-                            [(ngModel)] = "examenData.numerosDepreguntas"
+                            [(ngModel)] = "examenData.numerosDePreguntas"
                             type="text"
                             [ngModelOptions]="{standalone: true}"
                             placeholder="Digite la cantidad de preguntas"

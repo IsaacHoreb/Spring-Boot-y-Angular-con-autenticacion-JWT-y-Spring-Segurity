@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { CategoriaService } from 'src/app/services/categoria.service';
+import { ExamenService } from 'src/app/services/examen.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,17 +18,20 @@ export class AddExamenComponent implements OnInit {
 
   examenData = {
     titulo: '',
-    descricion: '',
-    puntosMaximos: '',
-    numerosDepreguntas: '',
+    descripcion: '',
+    puntoMaxiomos: '',
+    numerosDePreguntas: '',
     activo: true,
     categoria: {
       categoriaId: ''
     }
   }
 
-  constructor(private categoriaService: CategoriaService) { }
- 
+  //334.-Agregamos el snack:MatSnackBar
+  //339.-Agregamos el examenService:ExamenService
+  //341.-Agregamos el router en el consturtor, y despues lo añadimos en el metodo agregarExamen
+  constructor(private categoriaService: CategoriaService, private snack: MatSnackBar, private examenService: ExamenService, private router: Router) { }
+
   ngOnInit(): void {
     this.categoriaService.listarCategorias().subscribe(
       (dato: any) => {
@@ -34,7 +40,44 @@ export class AddExamenComponent implements OnInit {
       }, (error) => {
         console.log(error);
         Swal.fire('Error !!', 'Error al cargar los datos', 'error')
-      })
+      }
+    )
   }
 
+  //335.-Agregamos esto es para la validacion del cuestionario a guardar
+  //335.1-Agremos en el <form> de add-examen.component.html ###########
+
+  //336.-Vamos a agregar un metodo en el servicio, debemos ir a examen.service.ts
+  guardarCuestionario() {
+    console.log(this.examenData);
+    if (this.examenData.titulo.trim() == '' || this.examenData.titulo == null) {
+      this.snack.open('El titulo es requerido', '', {
+        duration: 3000
+      });
+      return;
+    }
+
+    //340.-Empezamos agregando para agregarlo a la BD
+    //340.1 Ir al constructor de aqui mismo
+    this.examenService.agregarExamen(this.examenData).subscribe(
+      (data) => {
+        console.log(data);
+        Swal.fire('Examen guardado', 'El examen ha sido guardado con éxito', 'success');
+        this.examenData = {
+          titulo: '',
+          descripcion: '',
+          puntoMaxiomos: '',
+          numerosDePreguntas: '',
+          activo: true,
+          categoria: {
+            categoriaId: ''
+          }
+        }//342.-Agregamos
+        this.router.navigate(['admin/examenes']);
+      }, (error) => {
+        Swal.fire('Error', 'Error al guardar el examen', 'error');
+      }
+    )
+  }
+  //326.-Ir a add-examen.component.html
 }

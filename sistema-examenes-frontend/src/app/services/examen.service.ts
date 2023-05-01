@@ -14,5 +14,12 @@ export class ExamenService {
   public listarCuestionario() {
     return this.http.get(`${baserUrl}/examen/`);
   }
+
+  //337.-Agregamos metodo
+  //338.-Regresamos a add-examen.component.ts
+  public agregarExamen(examen: any) {
+    return this.http.post(`${baserUrl}/examen/`, examen);
+  }
+
 }
 //305.- Nos vamos a view-examenes.component.ts
