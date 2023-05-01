@@ -10,7 +10,7 @@
                     <input 
                     [(ngModel)] = "examenData.titulo"
                     type="text"
-                    name="titulo"
+                    [ngModelOptions]="{standalone: true}"
                     placeholder="Digite el titulo"
                     matInput>
                 </mat-form-field>
@@ -19,9 +19,9 @@
                     <mat-label>Descripcion</mat-label>
                     <!--328.-Añadimos el [(ngModel)]-->
                     <textarea
-                    [(ngModel)] = "examenData.descricion"
+                    [(ngModel)] = "examenData.descripcion"
                     type="text"
-                    name="descripcion"
+                    [ngModelOptions]="{standalone: true}"
                     placeholder="Digite la descripcion"
                     matInput
                     rows="8"></textarea>
@@ -33,9 +33,9 @@
                             <mat-label>Puntos máximos</mat-label>
                             <!--329.-Añadimos el [(ngModel)]-->
                             <input 
-                            [(ngModel)] = "examenData.puntosMaximos"
+                            [(ngModel)] = "examenData.puntosMaxiomos"
                             type="text"
-                            name="puntosMaximos"
+                            [ngModelOptions]="{standalone: true}"
                             placeholder="Digite la cantidad de puntos"
                             matInput>
                         </mat-form-field>
@@ -48,7 +48,7 @@
                             <input 
                             [(ngModel)] = "examenData.numerosDepreguntas"
                             type="text"
-                            name="numeroDePreguntas"
+                            [ngModelOptions]="{standalone: true}"
                             placeholder="Digite la cantidad de preguntas"
                             matInput>
                         </mat-form-field>
@@ -61,14 +61,14 @@
                 <!--322.-Agregamos como casilla de activacion/desactivacion-->
                 <!--323.Ir a Angular Material y buscamo el: Select 
                     e importamos en -> app.module.ts-->
-                <mat-slide-toggle class="mt20" [(ngModel)] = "examenData.activo" color="primary">
+                <mat-slide-toggle class="mt20" [ngModelOptions]="{standalone: true}" [(ngModel)] = "examenData.activo" color="primary">
                    Estado de publicación
                 </mat-slide-toggle>
 
                 <!--331.-Añadimos-->
                 <mat-form-field appearance="fill" class="mt20 w100">
                     <mat-label>Categorías</mat-label>
-                    <mat-select name="categoria" [(ngModel)] = "examenData.categoria.categoriaId">
+                    <mat-select [ngModelOptions]="{standalone: true}" [(ngModel)] = "examenData.categoria.categoriaId">
                         <mat-option *ngFor = "let c of categorias" [value]="c.categoriaId">
                             {{c.titulo}}
                         </mat-option>
@@ -77,8 +77,9 @@
 
                 <!--332-->
                 <div class="container text-center">
-                    <button mat-raised-button color="primary">Agregar</button>
+                    <button mat-raised-button color="primary">Guardar</button>
                 </div>
+                <!--333.-Ir a add-examem.component.ts-->
             </form>
         </div>
     </div>
