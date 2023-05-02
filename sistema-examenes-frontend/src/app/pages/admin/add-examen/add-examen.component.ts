@@ -74,6 +74,7 @@ export class AddExamenComponent implements OnInit {
           }
         }//342.-Agregamos
         this.router.navigate(['admin/examenes']);
+        //343.-Ir a view-examen.component.html
       }, (error) => {
         Swal.fire('Error', 'Error al guardar el examen', 'error');
       }

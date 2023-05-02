@@ -21,5 +21,11 @@ export class ExamenService {
     return this.http.post(`${baserUrl}/examen/`, examen);
   }
 
+  //348.-Agreamos metodo para eliminar
+  //349.-Ir a  view-examenes.component.ts
+  public eliminarExamen(examenId: any) {
+    return this.http.delete(`${baserUrl}/examen/${examenId}`);
+  }
+
 }
 //305.- Nos vamos a view-examenes.component.ts

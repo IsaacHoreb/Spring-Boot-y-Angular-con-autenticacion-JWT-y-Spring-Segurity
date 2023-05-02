@@ -18,6 +18,9 @@
             <button mat-stroked-button color="primary" class="ml20">Preguntas {{ e.numerosDePreguntas }} </button>
             <button mat-flat-button color="primary" class="ml20">Actualizar</button>
             <button mat-flat-button color="primary" class="ml20">Intentos</button>
+            <!--344.-Agregamos otro button-->
+            <!--345.-Ir a view-examen.component.ts a crear el metodo de eliminarExamen-->
+            <button mat-flat-button color="warn" class="ml10" (click)= "eliminarExamen(e.examenId)">Eliminar</button> 
         </mat-card-actions>
     </mat-card-content>
 </mat-card>
@@ -26,6 +29,7 @@
     <!--316.-Añadimos un routerLint=""-->
     <!--317.-Ir a add-examen.component.html-->
     <button routerLink="/admin/add-examen" mat-raised-button color="primary">Agregar cuestionario</button>
+
 </div>
 
 <!--309.-Ir al view-examenes.component.css, agregamos estilos y regresamos de vuelta-->
