@@ -16,11 +16,15 @@
             <button mat-flat-button color="primary">Preguntas</button>
             <button mat-stroked-button color="primary" class="ml20">Puntos máximos {{ e.puntoMaxiomos }} </button>
             <button mat-stroked-button color="primary" class="ml20">Preguntas {{ e.numerosDePreguntas }} </button>
-            <button mat-flat-button color="primary" class="ml20">Actualizar</button>
+            <!--350.-Agregamos el [routerLink]=""-->
+            <!--351.-ir a actualizar-examen.component.ts-->
+            <button [routerLink]="'/admin/examen/'+e.examenId" mat-flat-button color="primary" class="ml20">Actualizar</button>
             <button mat-flat-button color="primary" class="ml20">Intentos</button>
             <!--344.-Agregamos otro button-->
             <!--345.-Ir a view-examen.component.ts a crear el metodo de eliminarExamen-->
             <button mat-flat-button color="warn" class="ml10" (click)= "eliminarExamen(e.examenId)">Eliminar</button> 
+            <!--346.-Ir en CMD a admin, y crear el: ng g c actualizar-examen -->
+            <!--347.-Agregar al app-routing.modules.ts-->
         </mat-card-actions>
     </mat-card-content>
 </mat-card>

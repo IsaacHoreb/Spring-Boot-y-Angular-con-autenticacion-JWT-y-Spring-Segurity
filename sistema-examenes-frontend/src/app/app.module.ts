@@ -41,6 +41,7 @@ import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-cate
 import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categorias.component';
 import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
 import { AddExamenComponent } from './pages/admin/add-examen/add-examen.component';
+import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { AddExamenComponent } from './pages/admin/add-examen/add-examen.componen
     ViewCategoriasComponent,
     AddCategoriasComponent,
     ViewExamenesComponent,
-    AddExamenComponent
+    AddExamenComponent,
+    ActualizarExamenComponent
   ],
   imports: [
     BrowserModule,
