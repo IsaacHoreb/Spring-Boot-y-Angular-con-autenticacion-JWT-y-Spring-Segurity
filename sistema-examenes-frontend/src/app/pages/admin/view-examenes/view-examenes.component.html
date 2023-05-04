@@ -13,7 +13,9 @@
     </mat-card-header>
     <mat-card-content>
         <mat-card-actions>
-            <button mat-flat-button color="primary">Preguntas</button>
+            <!--374.-Agregamos otros paramentros como [routerLink]="",
+            despues de agregarlo y funciones, ir a a view-examen-preguntas.component.ts-->
+            <button mat-flat-button color="primary" [routerLink]= "'/admin/ver-preguntas/'+e.examenId+'/'+e.titulo">Preguntas</button>
             <button mat-stroked-button color="primary" class="ml20">Puntos máximos {{ e.puntoMaxiomos }} </button>
             <button mat-stroked-button color="primary" class="ml20">Preguntas {{ e.numerosDePreguntas }} </button>
             <!--350.-Agregamos el [routerLink]=""-->

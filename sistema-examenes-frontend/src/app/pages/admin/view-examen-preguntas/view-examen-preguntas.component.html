@@ -1,0 +1,20 @@
+<!--371.-Ir a app-routing.module.ts, para agregar la ruta-->
+<!--377.-Agregamos-->
+<h1 class="mt20">Preguntas de {{ titulo }} </h1>
+<!--378.-Ir al CMD y generamos servicio en la carpeta service con: ng g s pregunta-->
+<!--379.Ir a preguta.service.ts-->
+<!--386.-Agregamos-->
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card *ngFor= "let p of preguntas; let i = index" class="mt20">
+                <mat-card-content>
+                    <p>
+                        <b> {{ i + 1 }} </b>
+                        <span class="ml20" [innerHTML]= "p.contenido"></span>
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

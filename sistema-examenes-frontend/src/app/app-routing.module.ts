@@ -14,6 +14,7 @@ import { AddCategoriasComponent } from './pages/admin/add-categorias/add-categor
 import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
 import { AddExamenComponent } from './pages/admin/add-examen/add-examen.component';
 import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
+import { ViewExamenPreguntasComponent } from './pages/admin/view-examen-preguntas/view-examen-preguntas.component';
 
 
 //52.-Recordar que aqui modificamos y agregamos rutas
@@ -73,7 +74,11 @@ const routes: Routes = [
       {//348.-Agrega la ruta de actualizar-examen
         path: 'examen/:examenId',
         component: ActualizarExamenComponent
-      }//349.-Ir a view-examenes.components.html
+      },//349.-Ir a view-examenes.components.html
+      {//372.-Añadimos la ruta para view-examen-preguntas
+        path: 'ver-preguntas/:examenId/:titulo',
+        component: ViewExamenPreguntasComponent
+      }//373.-Ir a view-examenes.component.html
     ]
   }, //140.-Agregamos la rutas... checamos que funcion... y nos vamos a login.component.ts
   {
