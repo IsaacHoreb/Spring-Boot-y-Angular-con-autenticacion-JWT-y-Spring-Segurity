@@ -14,4 +14,7 @@ export class PreguntaService {
     return this.http.get(`${baserUrl}/pregunta/examen/${examenId}`)
   }
   //381.-Ir a view-examen-preguntas.component.ts
+
+  
+
 }

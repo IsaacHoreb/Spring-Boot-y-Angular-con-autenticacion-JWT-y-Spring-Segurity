@@ -10,9 +10,40 @@
             <mat-card *ngFor= "let p of preguntas; let i = index" class="mt20">
                 <mat-card-content>
                     <p>
+                        <!--Mostramo la pregunta-->
                         <b> {{ i + 1 }} </b>
                         <span class="ml20" [innerHTML]= "p.contenido"></span>
                     </p>
+                    <!--Posibles respuesta-->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>1)<b> {{ p.opcion1 }} </b></p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p>2)<b> {{ p.opcion2 }} </b></p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p>3)<b> {{ p.opcion3 }} </b></p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p>4)<b> {{ p.opcion4 }} </b></p>
+                            </div>
+
+                        </div>
+                        
+                        <!--Mostramo la respuesta correcta si eres ADMIN-->
+                        <mat-divider></mat-divider>
+                        <p class="mt20">
+                            <b>Respuesta Correcta : {{p.respuesta}} </b>
+                        </p>
+
+                        <!--387.-Ir al Back-end en preguntaControllers y agregamo un nuevo metod-->
+
+                    </div>
                 </mat-card-content>
             </mat-card>
         </div>

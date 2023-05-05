@@ -57,4 +57,13 @@ public class PreguntaController {
         preguntaService.eliminarPregunta(preguntaId);
     }
 
+    //388.-Creamos el metodo
+    //388.1-Ir al Frontend en preguntaService.ts para hacer modificaciones 
+    @GetMapping("/examem/todos/{examenId}")
+    public ResponseEntity<?> listarPreguntaDelExamenComoAdministrador(@PathVariable("examenId") Long examenId) {
+        Examen examen = new Examen();
+        examen.setExamenId(examenId);
+        Set<Pregunta> preguntas = preguntaService.obtenerPreguntaDelExamen(examen);
+        return ResponseEntity.ok(preguntas);
+    }
 }
