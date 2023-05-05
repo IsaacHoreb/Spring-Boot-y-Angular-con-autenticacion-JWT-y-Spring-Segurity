@@ -58,8 +58,8 @@ public class PreguntaController {
     }
 
     //388.-Creamos el metodo
-    //388.1-Ir al Frontend en preguntaService.ts para hacer modificaciones 
-    @GetMapping("/examem/todos/{examenId}")
+    //388.1-Ir al Frontend en preguntaService.ts para hacer modificaciones
+    @GetMapping("/examen/todos/{examenId}")
     public ResponseEntity<?> listarPreguntaDelExamenComoAdministrador(@PathVariable("examenId") Long examenId) {
         Examen examen = new Examen();
         examen.setExamenId(examenId);
