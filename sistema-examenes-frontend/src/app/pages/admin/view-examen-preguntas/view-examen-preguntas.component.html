@@ -7,6 +7,13 @@
 <div class="bootstrap-wrapper">
     <div class="row">
         <div class="col-md-12">
+            <!--394.-Agregamo este button-->
+            <!--401.-Agregamos en el button el +'/'+titulo-->
+            <!--402.-Ir a add-pregunta.component.ts-->
+            <div class="container text-center">
+                <button mat-raised-button color="primary" [routerLink] = "'/admin/add-pregunta/'+examenId+'/'+titulo">Agregar pregunta</button>
+            </div>
+            <!--395.-Ir al add-pregunta.component.ts-->
             <mat-card *ngFor= "let p of preguntas; let i = index" class="mt20">
                 <mat-card-content>
                     <p>

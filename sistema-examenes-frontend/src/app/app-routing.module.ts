@@ -15,6 +15,7 @@ import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes
 import { AddExamenComponent } from './pages/admin/add-examen/add-examen.component';
 import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
 import { ViewExamenPreguntasComponent } from './pages/admin/view-examen-preguntas/view-examen-preguntas.component';
+import { AddPreguntaComponent } from './pages/admin/add-pregunta/add-pregunta.component';
 
 
 //52.-Recordar que aqui modificamos y agregamos rutas
@@ -78,7 +79,11 @@ const routes: Routes = [
       {//372.-Añadimos la ruta para view-examen-preguntas
         path: 'ver-preguntas/:examenId/:titulo',
         component: ViewExamenPreguntasComponent
-      }//373.-Ir a view-examenes.component.html
+      },//373.-Ir a view-examenes.component.html
+      {//392.-Agregamos la ruta de add-pregunta
+        path: 'add-pregunta/:examenId/:titulo',
+        component: AddPreguntaComponent
+      }//393.-Ir a view-examen-preguntas.component.html
     ]
   }, //140.-Agregamos la rutas... checamos que funcion... y nos vamos a login.component.ts
   {
