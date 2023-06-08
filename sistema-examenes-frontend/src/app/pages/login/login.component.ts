@@ -34,16 +34,16 @@ export class LoginComponent implements OnInit {
     //107.1-QUITAR
     //console.log("Click en el boton de login")
     //108.-Condicion agregando
-    if (this.loginData.username == "" || this.loginData.username == null) {
-      this.snack.open("El nombre de usuario es requerido", "Aceptar", {
+    if (this.loginData.username.trim() == "" || this.loginData.username.trim() == null) {
+      this.snack.open("El nombre de usuario es requerido !!", "Aceptar", {
         duration: 3000
       })
       return;
     }
 
     //109.-Codicion si falta el password y probamos la aplicación 
-    if (this.loginData.password == "" || this.loginData.password == null) {
-      this.snack.open("La constraseña es requerido", "Aceptar", {
+    if (this.loginData.password.trim() == "" || this.loginData.password.trim() == null) {
+      this.snack.open("La constraseña es requerido !!", "Aceptar", {
         duration: 3000
       })
       return;
@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
             //window.location.href = '/user-dashboard';
             this.router.navigate(['user-dashboard']); //165.-Agregamos y comentamos el window#####
             this.loginService.loginStatusSubjec.next(true); //171.-Añadir y probamos funcion
-                                                            //172.-Nos vamos al BACK-END en MySecurityConfig paso 90
+            //172.-Nos vamos al BACK-END en MySecurityConfig paso 90
             //166.-Provamos la aplicacion en el navegador
             //167.- Ir al login.service.ts
           } else {

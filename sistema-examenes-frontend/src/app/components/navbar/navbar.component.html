@@ -49,8 +49,22 @@
         class="Example-icon favorite-icon ml70"
         routerLink = "/admin/profile"  
         aria-label="Example icon-button with heart icon">
-        {{ login.getUser().username }}
+        {{ login.getUser().username}}
     </button>
+
+
+    <!--
+    <button
+        *ngIf = "isLoggedIn && user"
+        mat-button
+        style="margin-right: 10px"
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        [routerLink] = "'/admin/profile'">
+        {{ user.username }}
+    </button>
+    -->
+
 
     <!--163.Nos vamos a login.component.ts a paso 142-->
 

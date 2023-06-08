@@ -18,6 +18,12 @@ export class PreguntaService {
   }
   //381.-Ir a view-examen-preguntas.component.ts
 
-  
+  //411.- agregamos metodo para guardar
+  public guardarPregunta(pregunta: any) {
+    return this.http.post(`${baserUrl}/pregunta/`, pregunta);
+  }
+
+  //412.-Ir a add-pregunta.component.ts
+
 
 }
