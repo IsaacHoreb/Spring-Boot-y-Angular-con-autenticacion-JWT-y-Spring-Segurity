@@ -31,4 +31,14 @@ export class PreguntaService {
     return this.http.delete(`${baserUrl}/pregunta/${preguntaId}`)
   }
 
+  //423.-Metodo de actualizar pregunta
+  public actualizarPregunta(pregunta: any) {
+    return this.http.put(`${baserUrl}/pregunta/`, pregunta);
+  }//423.1-Creamos un metodo para obtener pregunta
+  public obtenerPregunta(preguntaId: any) {
+    return this.http.get(`${baserUrl}/pregunta/${preguntaId}`)
+  }//424.-Ir a app-routing.module.ts
+
+
+
 }

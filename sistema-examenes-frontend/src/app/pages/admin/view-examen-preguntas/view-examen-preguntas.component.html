@@ -55,10 +55,16 @@
 
                 <!--420.-Añadir--> 
                 <!--420.1-Pero tener creado en view-examen-pregunta.component.html-->
+                
                 <mat-card-actions>
                     <button mat-button (click) = "eliminarPregunta(p.preguntaId)" color = "warn">Eliminar</button>
-                    <button mat-button color = "primary">Actualizar</button>
+                    <!--433.-Agregar [routerLink=""]-->
+                    <button mat-button [routerLink] = "'/admin/pregunta/'+p.preguntaId" color = "primary">Actualizar</button>
+                    <!--434.-Después de checar, nos vamos a actualizar-pregunta.component.html-->
                 </mat-card-actions>
+
+                <!--421.-Ir al CMD y ir a la carpeta dentro de ADMIn, y crearemos un COMPONENTE: ng g c actualizar-pregunta-->
+                <!--422.-Ir a pregunta.services.ts para agregar la ruta-->
 
             </mat-card>
         </div>
