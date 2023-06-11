@@ -25,5 +25,10 @@ export class PreguntaService {
 
   //412.-Ir a add-pregunta.component.ts
 
+  //418.-Metodo eliminar pregunta
+  //419.-Ir a view-examen-preguntas.component.html
+  public eliminarPregunta(preguntaId: any) {
+    return this.http.delete(`${baserUrl}/pregunta/${preguntaId}`)
+  }
 
 }

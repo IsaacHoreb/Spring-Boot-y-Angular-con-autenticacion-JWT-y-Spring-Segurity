@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { PreguntaService } from 'src/app/services/pregunta.service';
 import Swal from 'sweetalert2';
@@ -81,8 +82,8 @@ export class AddPreguntaComponent implements OnInit {
         console.log(error);
       }
     )
-
     //415.-Ir al .html de esta carpeta para modificar el metodo form
   }
 
 }
+

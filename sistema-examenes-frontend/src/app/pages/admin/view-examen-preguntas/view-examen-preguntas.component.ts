@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { PreguntaService } from 'src/app/services/pregunta.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-examen-preguntas',
@@ -17,7 +19,8 @@ export class ViewExamenPreguntasComponent implements OnInit {
   preguntas: any = [];
 
   //383.-Inyectamos el preguntaService
-  constructor(private route: ActivatedRoute, private preguntaService: PreguntaService) { }
+  //420.2.- Añadimos el snack
+  constructor(private route: ActivatedRoute, private preguntaService: PreguntaService, private snack: MatSnackBar) { }
 
   ngOnInit(): void {
     this.examenId = this.route.snapshot.params['examenId'];
@@ -36,7 +39,35 @@ export class ViewExamenPreguntasComponent implements OnInit {
       }
     )
   }
-  
   //376.-Ir al .html de este mismo documento
 
+  //420.3.-Creamos el metodo que va en la mano del 420 en el .html
+  eliminarPregunta(preguntaId: any) {
+    Swal.fire({
+      title: 'Eliminar pregunta',
+      text: '¿Estás seguro , que quieres eliminar esta pregunta?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((resultado) => {
+      if (resultado.isConfirmed) {
+        this.preguntaService.eliminarPregunta(preguntaId).subscribe(
+          (data) => {
+            this.snack.open('Pregunta eliminada', '', {
+              duration: 3000
+            })
+            this.preguntas = this.preguntas.filter((pregunta: any) => pregunta.preguntaId != preguntaId);
+          }, (error) => {
+            this.snack.open('Error al eliminar la pregunta', '', {
+              duration: 3000
+            })
+            console.log(error);
+          }
+        )
+      }
+    })
+  }
 }
